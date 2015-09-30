@@ -1,2 +1,1 @@
-# image-toolkit
-Image ToolKit for Devigners
+# Image ToolKit for Devigners
