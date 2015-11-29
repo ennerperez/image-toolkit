@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
-            this.buttonToB64 = new System.Windows.Forms.Button();
+            this.buttonFromB64 = new System.Windows.Forms.Button();
             this.trackBarCompressRatio = new System.Windows.Forms.TrackBar();
             this.labelCompressRatioPercent = new System.Windows.Forms.Label();
-            this.buttonFromB64 = new System.Windows.Forms.Button();
+            this.buttonToB64 = new System.Windows.Forms.Button();
             this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.bufferedPanelPreview = new System.Windows.Forms.BufferedPanel();
             this.labelDragDropPreview = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCompressRatio)).BeginInit();
@@ -53,7 +56,8 @@
             this.buttonAbout.Location = new System.Drawing.Point(427, 373);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(25, 25);
-            this.buttonAbout.TabIndex = 7;
+            this.buttonAbout.TabIndex = 8;
+            this.toolTipMain.SetToolTip(this.buttonAbout, "About");
             this.buttonAbout.UseVisualStyleBackColor = true;
             this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
@@ -68,33 +72,36 @@
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(25, 25);
             this.buttonOpen.TabIndex = 1;
+            this.toolTipMain.SetToolTip(this.buttonOpen, "Open");
             this.buttonOpen.UseVisualStyleBackColor = true;
             this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
-            // buttonToB64
+            // buttonFromB64
             // 
-            this.buttonToB64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonToB64.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonToB64.BackgroundImage")));
-            this.buttonToB64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonToB64.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonToB64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonToB64.Location = new System.Drawing.Point(427, 74);
-            this.buttonToB64.Name = "buttonToB64";
-            this.buttonToB64.Size = new System.Drawing.Size(25, 25);
-            this.buttonToB64.TabIndex = 3;
-            this.buttonToB64.UseVisualStyleBackColor = true;
-            this.buttonToB64.Click += new System.EventHandler(this.buttonToB64_Click);
+            this.buttonFromB64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFromB64.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFromB64.BackgroundImage")));
+            this.buttonFromB64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonFromB64.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonFromB64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFromB64.Location = new System.Drawing.Point(427, 74);
+            this.buttonFromB64.Name = "buttonFromB64";
+            this.buttonFromB64.Size = new System.Drawing.Size(25, 25);
+            this.buttonFromB64.TabIndex = 3;
+            this.toolTipMain.SetToolTip(this.buttonFromB64, "Conver from B64");
+            this.buttonFromB64.UseVisualStyleBackColor = true;
+            this.buttonFromB64.Click += new System.EventHandler(this.buttonFromB64_Click);
             // 
             // trackBarCompressRatio
             // 
             this.trackBarCompressRatio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarCompressRatio.AutoSize = false;
             this.trackBarCompressRatio.Enabled = false;
-            this.trackBarCompressRatio.Location = new System.Drawing.Point(12, 408);
+            this.trackBarCompressRatio.Location = new System.Drawing.Point(116, 408);
             this.trackBarCompressRatio.Maximum = 100;
             this.trackBarCompressRatio.Name = "trackBarCompressRatio";
-            this.trackBarCompressRatio.Size = new System.Drawing.Size(399, 45);
-            this.trackBarCompressRatio.TabIndex = 5;
+            this.trackBarCompressRatio.Size = new System.Drawing.Size(295, 21);
+            this.trackBarCompressRatio.TabIndex = 6;
             this.trackBarCompressRatio.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarCompressRatio.Scroll += new System.EventHandler(this.trackBarCompressRatio_Scroll);
             // 
@@ -104,23 +111,24 @@
             this.labelCompressRatioPercent.Location = new System.Drawing.Point(412, 408);
             this.labelCompressRatioPercent.Name = "labelCompressRatioPercent";
             this.labelCompressRatioPercent.Size = new System.Drawing.Size(40, 17);
-            this.labelCompressRatioPercent.TabIndex = 6;
+            this.labelCompressRatioPercent.TabIndex = 7;
             this.labelCompressRatioPercent.Text = "0%";
             this.labelCompressRatioPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // buttonFromB64
+            // buttonToB64
             // 
-            this.buttonFromB64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFromB64.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFromB64.BackgroundImage")));
-            this.buttonFromB64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonFromB64.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonFromB64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFromB64.Location = new System.Drawing.Point(427, 43);
-            this.buttonFromB64.Name = "buttonFromB64";
-            this.buttonFromB64.Size = new System.Drawing.Size(25, 25);
-            this.buttonFromB64.TabIndex = 2;
-            this.buttonFromB64.UseVisualStyleBackColor = true;
-            this.buttonFromB64.Click += new System.EventHandler(this.buttonFromB64_Click);
+            this.buttonToB64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonToB64.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonToB64.BackgroundImage")));
+            this.buttonToB64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonToB64.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonToB64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonToB64.Location = new System.Drawing.Point(427, 43);
+            this.buttonToB64.Name = "buttonToB64";
+            this.buttonToB64.Size = new System.Drawing.Size(25, 25);
+            this.buttonToB64.TabIndex = 2;
+            this.toolTipMain.SetToolTip(this.buttonToB64, "Conver to B64");
+            this.buttonToB64.UseVisualStyleBackColor = true;
+            this.buttonToB64.Click += new System.EventHandler(this.buttonToB64_Click);
             // 
             // openFileDialogImage
             // 
@@ -141,9 +149,19 @@
             this.buttonClear.Location = new System.Drawing.Point(427, 105);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(25, 25);
-            this.buttonClear.TabIndex = 3;
+            this.buttonClear.TabIndex = 4;
+            this.toolTipMain.SetToolTip(this.buttonClear, "Clear");
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 408);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Compress ratio";
             // 
             // bufferedPanelPreview
             // 
@@ -183,10 +201,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(464, 441);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelCompressRatioPercent);
             this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.buttonToB64);
             this.Controls.Add(this.buttonFromB64);
+            this.Controls.Add(this.buttonToB64);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.trackBarCompressRatio);
@@ -211,13 +230,15 @@
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.Label labelDragDropPreview;
-        private System.Windows.Forms.Button buttonToB64;
+        private System.Windows.Forms.Button buttonFromB64;
         private System.Windows.Forms.TrackBar trackBarCompressRatio;
         private System.Windows.Forms.Label labelCompressRatioPercent;
-        private System.Windows.Forms.Button buttonFromB64;
+        private System.Windows.Forms.Button buttonToB64;
         private System.Windows.Forms.BufferedPanel bufferedPanelPreview;
         private System.Windows.Forms.OpenFileDialog openFileDialogImage;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.ToolTip toolTipMain;
+        private System.Windows.Forms.Label label1;
     }
 }
 

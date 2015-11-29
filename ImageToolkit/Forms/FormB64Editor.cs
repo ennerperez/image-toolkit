@@ -55,7 +55,7 @@ namespace Toolkit.Forms
                     {
                         if (!string.IsNullOrEmpty(textBoxB64.Text))
                         {
-                            Image = System.Drawing.Helpers.FromBase64(textBoxB64.Text);
+                            Image = System.Drawing.Helpers.FromBase64(textBoxB64.Text.Replace("\r\n",""));
                             DialogResult = DialogResult.OK;
                             if (Process != null)
                                 Process.Invoke(this, new EventArgs());

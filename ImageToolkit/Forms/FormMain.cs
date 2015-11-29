@@ -164,20 +164,25 @@ namespace Toolkit.Forms
 
         private void buttonFromB64_Click(object sender, EventArgs e)
         {
-            if (bufferedPanelPreview.BackgroundImage != null)
-            {
-                FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Save);
-                editor.Image = bufferedPanelPreview.BackgroundImage;
-                editor.Show();
-            }
+            FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Open);
+            editor.StartPosition = FormStartPosition.Manual;
+            editor.Height = this.Height;
+            editor.Location = new Point(this.Location.X + this.Width , this.Location.Y);
+            editor.Process += (object s, EventArgs v) => bufferedPanelPreview.BackgroundImage = editor.Image;
+            editor.Show();
         }
 
         private void buttonToB64_Click(object sender, EventArgs e)
         {
-            FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Open);
-            editor.Process += (object s, EventArgs v) => bufferedPanelPreview.BackgroundImage = editor.Image;
-            editor.Show();
-
+            if (bufferedPanelPreview.BackgroundImage != null)
+            {
+                FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Save);
+                editor.StartPosition = FormStartPosition.Manual;
+                editor.Height = this.Height;
+                editor.Location = new Point(this.Location.X + this.Width , this.Location.Y);
+                editor.Image = bufferedPanelPreview.BackgroundImage;
+                editor.Show();
+            }
         }
 
 
@@ -200,5 +205,7 @@ namespace Toolkit.Forms
             }
 
         }
+
+       
     }
 }

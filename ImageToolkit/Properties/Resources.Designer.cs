@@ -69,5 +69,15 @@ namespace Toolkit.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] LICENSE {
+            get {
+                object obj = ResourceManager.GetObject("LICENSE", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

@@ -34,7 +34,14 @@
             this.richTextBoxChangeLog = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabelWeb = new System.Windows.Forms.LinkLabel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.tabPageLicense = new System.Windows.Forms.TabPage();
+            this.richTextBoxLicense = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPageLog.SuspendLayout();
+            this.tabPageLicense.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonClose
@@ -63,10 +70,10 @@
             this.richTextBoxChangeLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxChangeLog.Location = new System.Drawing.Point(12, 56);
+            this.richTextBoxChangeLog.Location = new System.Drawing.Point(6, 6);
             this.richTextBoxChangeLog.Name = "richTextBoxChangeLog";
             this.richTextBoxChangeLog.ReadOnly = true;
-            this.richTextBoxChangeLog.Size = new System.Drawing.Size(560, 261);
+            this.richTextBoxChangeLog.Size = new System.Drawing.Size(540, 225);
             this.richTextBoxChangeLog.TabIndex = 2;
             this.richTextBoxChangeLog.Text = "";
             // 
@@ -86,7 +93,7 @@
             this.linkLabelWeb.AutoSize = true;
             this.linkLabelWeb.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelWeb.LinkColor = System.Drawing.SystemColors.HotTrack;
-            this.linkLabelWeb.Location = new System.Drawing.Point(9, 328);
+            this.linkLabelWeb.Location = new System.Drawing.Point(12, 328);
             this.linkLabelWeb.Name = "linkLabelWeb";
             this.linkLabelWeb.Size = new System.Drawing.Size(189, 17);
             this.linkLabelWeb.TabIndex = 4;
@@ -94,14 +101,58 @@
             this.linkLabelWeb.Text = "http://www.ennerperez.com.ve/";
             this.linkLabelWeb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWeb_LinkClicked);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPageLog);
+            this.tabControl1.Controls.Add(this.tabPageLicense);
+            this.tabControl1.Location = new System.Drawing.Point(12, 50);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(560, 267);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPageLog
+            // 
+            this.tabPageLog.Controls.Add(this.richTextBoxChangeLog);
+            this.tabPageLog.Location = new System.Drawing.Point(4, 26);
+            this.tabPageLog.Name = "tabPageLog";
+            this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLog.Size = new System.Drawing.Size(552, 237);
+            this.tabPageLog.TabIndex = 0;
+            this.tabPageLog.Text = "Changelog";
+            this.tabPageLog.UseVisualStyleBackColor = true;
+            // 
+            // tabPageLicense
+            // 
+            this.tabPageLicense.Controls.Add(this.richTextBoxLicense);
+            this.tabPageLicense.Location = new System.Drawing.Point(4, 26);
+            this.tabPageLicense.Name = "tabPageLicense";
+            this.tabPageLicense.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLicense.Size = new System.Drawing.Size(552, 237);
+            this.tabPageLicense.TabIndex = 1;
+            this.tabPageLicense.Text = "License";
+            this.tabPageLicense.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxLicense
+            // 
+            this.richTextBoxLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxLicense.Location = new System.Drawing.Point(6, 6);
+            this.richTextBoxLicense.Name = "richTextBoxLicense";
+            this.richTextBoxLicense.ReadOnly = true;
+            this.richTextBoxLicense.Size = new System.Drawing.Size(540, 225);
+            this.richTextBoxLicense.TabIndex = 2;
+            this.richTextBoxLicense.Text = "";
+            // 
             // FormAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.linkLabelWeb);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.richTextBoxChangeLog);
             this.Controls.Add(this.labelAbout);
             this.Controls.Add(this.buttonClose);
             this.DoubleBuffered = true;
@@ -117,6 +168,9 @@
             this.Text = "About...";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPageLog.ResumeLayout(false);
+            this.tabPageLicense.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +183,9 @@
         private System.Windows.Forms.RichTextBox richTextBoxChangeLog;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabelWeb;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPageLog;
+        private System.Windows.Forms.TabPage tabPageLicense;
+        private System.Windows.Forms.RichTextBox richTextBoxLicense;
     }
 }

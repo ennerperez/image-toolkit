@@ -20,6 +20,7 @@ namespace Toolkit.Forms
                 ApplicationInfo.CopyrightHolder);
 
             richTextBoxChangeLog.Text = System.Text.Encoding.UTF8.GetString(Toolkit.Properties.Resources.CHANGELOG);
+            richTextBoxLicense.Text = System.Text.Encoding.UTF8.GetString(Toolkit.Properties.Resources.LICENSE);
 
         }
 
@@ -32,5 +33,7 @@ namespace Toolkit.Forms
         {
             System.Diagnostics.Process.Start((sender as LinkLabel).Text);
         }
+
+
     }
 }
