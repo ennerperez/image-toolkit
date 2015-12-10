@@ -61,7 +61,7 @@
             this.buttonAbout.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbout.Image = ((System.Drawing.Image)(resources.GetObject("buttonAbout.Image")));
-            this.buttonAbout.Location = new System.Drawing.Point(427, 373);
+            this.buttonAbout.Location = new System.Drawing.Point(427, 404);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(25, 25);
             this.buttonAbout.TabIndex = 8;
@@ -102,8 +102,7 @@
             // 
             // trackBarCompressRatio
             // 
-            this.trackBarCompressRatio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarCompressRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBarCompressRatio.AutoSize = false;
             this.trackBarCompressRatio.Enabled = false;
             this.trackBarCompressRatio.Location = new System.Drawing.Point(116, 408);
@@ -112,17 +111,19 @@
             this.trackBarCompressRatio.Size = new System.Drawing.Size(295, 21);
             this.trackBarCompressRatio.TabIndex = 6;
             this.trackBarCompressRatio.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarCompressRatio.Visible = false;
             this.trackBarCompressRatio.Scroll += new System.EventHandler(this.trackBarCompressRatio_Scroll);
             // 
             // labelCompressRatioPercent
             // 
-            this.labelCompressRatioPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCompressRatioPercent.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelCompressRatioPercent.Location = new System.Drawing.Point(412, 408);
             this.labelCompressRatioPercent.Name = "labelCompressRatioPercent";
             this.labelCompressRatioPercent.Size = new System.Drawing.Size(40, 17);
             this.labelCompressRatioPercent.TabIndex = 7;
             this.labelCompressRatioPercent.Text = "0%";
             this.labelCompressRatioPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelCompressRatioPercent.Visible = false;
             // 
             // buttonToB64
             // 
@@ -198,13 +199,14 @@
             // 
             // labelCompress
             // 
-            this.labelCompress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelCompress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelCompress.AutoSize = true;
             this.labelCompress.Location = new System.Drawing.Point(12, 408);
             this.labelCompress.Name = "labelCompress";
             this.labelCompress.Size = new System.Drawing.Size(98, 17);
             this.labelCompress.TabIndex = 5;
             this.labelCompress.Text = "Compress ratio";
+            this.labelCompress.Visible = false;
             // 
             // saveFileDialogImage
             // 
@@ -268,14 +270,10 @@
             this.bufferedPanelPreview.Location = new System.Drawing.Point(12, 12);
             this.bufferedPanelPreview.Name = "bufferedPanelPreview";
             this.bufferedPanelPreview.Padding = new System.Windows.Forms.Padding(9);
-            this.bufferedPanelPreview.Size = new System.Drawing.Size(409, 386);
+            this.bufferedPanelPreview.Size = new System.Drawing.Size(409, 417);
             this.bufferedPanelPreview.TabIndex = 0;
             this.bufferedPanelPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragDrop);
             this.bufferedPanelPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragEnter);
-            //this.bufferedPanelPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.bufferedPanelPreview_Paint);
-            //this.bufferedPanelPreview.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bufferedPanelPreview_MouseDown);
-            //this.bufferedPanelPreview.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bufferedPanelPreview_MouseMove);
-            //this.bufferedPanelPreview.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bufferedPanelPreview_MouseUp);
             // 
             // labelDragDropPreview
             // 
@@ -286,7 +284,7 @@
             this.labelDragDropPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelDragDropPreview.Location = new System.Drawing.Point(9, 9);
             this.labelDragDropPreview.Name = "labelDragDropPreview";
-            this.labelDragDropPreview.Size = new System.Drawing.Size(389, 366);
+            this.labelDragDropPreview.Size = new System.Drawing.Size(389, 397);
             this.labelDragDropPreview.TabIndex = 0;
             this.labelDragDropPreview.Text = "Drag && Drop\r\nAny image or text based here";
             this.labelDragDropPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,6 +296,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(464, 441);
+            this.Controls.Add(this.buttonAbout);
+            this.Controls.Add(this.bufferedPanelPreview);
             this.Controls.Add(this.labelCompress);
             this.Controls.Add(this.labelCompressRatioPercent);
             this.Controls.Add(this.buttonRestore);
@@ -307,9 +307,7 @@
             this.Controls.Add(this.buttonToB64);
             this.Controls.Add(this.buttonSaveAs);
             this.Controls.Add(this.buttonOpen);
-            this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.trackBarCompressRatio);
-            this.Controls.Add(this.bufferedPanelPreview);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

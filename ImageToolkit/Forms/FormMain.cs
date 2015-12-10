@@ -16,8 +16,8 @@ namespace Toolkit.Forms
 
         #region Properties & Events
 
-        private Bitmap _Image;
-        public Bitmap Image
+        private Image _Image;
+        public Image Image
         {
             get
             {
@@ -293,105 +293,16 @@ namespace Toolkit.Forms
 
         #region Cropping
 
-        //private bool _cropping;
-        //private bool _selecting;
-        //private Rectangle _selection;
-
         private void buttonCrop_Click(object sender, EventArgs e)
         {
             var crop = new FormCrop();
-            crop.Image = Image;
+            crop.Image = bufferedPanelPreview.BackgroundImage;
             if (crop.ShowDialog() == DialogResult.OK)
             {
-                Image = crop.Image;
+                bufferedPanelPreview.BackgroundImage = crop.Image;
             }
-
-            
-
-            //buttonCrop.BackColor = _cropping ? Color.Transparent : SystemColors.ButtonShadow;
-            //_cropping = !_cropping;
-            //if (_cropping)
-            //    bufferedPanelPreview.Cursor = Cursors.Cross;
-            //else
-            //    bufferedPanelPreview.Cursor = Cursors.Default;
-
-            //buttonOpen.Enabled = !_cropping;
-            //buttonClear.Enabled = !_cropping;
-            //buttonRestore.Enabled = !_cropping;
-            //buttonToB64.Enabled = !_cropping;
-            //buttonFromB64.Enabled = !_cropping;
-            //buttonSaveAs.Enabled = !_cropping;
             
         }
-
-       // private void bufferedPanelPreview_MouseDown(object sender, MouseEventArgs e)
-       // {
-       //     if (_cropping)
-       //     {
-       //         if (e.Button == MouseButtons.Left)
-       //         {
-       //             Cursor.Hide();
-       //             _selecting = true;
-       //             _selection = new Rectangle(new Point(e.X, e.Y), new Size());
-       //         }
-       //     }
-
-       // }
-
-       // private void bufferedPanelPreview_MouseMove(object sender, MouseEventArgs e)
-       // {
-       //     if (_cropping)
-       //     {
-       //         // Update the actual size of the selection:
-       //         if (_selecting)
-       //         {
-       //             _selection.Width = e.X - _selection.X;
-       //             _selection.Height = e.Y - _selection.Y;
-
-       //             // Redraw the picturebox:
-       //             bufferedPanelPreview.Refresh();
-       //         }
-       //     }
-       // }
-
-       // private void bufferedPanelPreview_Paint(object sender, PaintEventArgs e)
-       // {
-       //     if (_cropping)
-       //     {
-       //         if (_selecting)
-       //         {
-       //             // Draw a rectangle displaying the current selection
-       //             Pen pen = Pens.GreenYellow;
-       //             e.Graphics.DrawRectangle(pen, _selection);
-       //         }
-       //     }
-       // }
-
-       // private void bufferedPanelPreview_MouseUp(object sender, MouseEventArgs e)
-       // {
-       //     if (_cropping)
-       //     {
-       //         if (e.Button == MouseButtons.Left &&
-       //_selecting &&
-       //_selection.Size != new Size())
-       //         {
-       //             // Create cropped image:
-       //             Image img = System.Drawing.Helpers.Crop(bufferedPanelPreview.BackgroundImage, _selection);
-
-       //             // Fit image to the picturebox:
-       //             bufferedPanelPreview.BackgroundImage = System.Drawing.Helpers.Fit2Control(img, bufferedPanelPreview);
-
-       //             _selecting = false;
-       //         }
-       //         else
-       //             _selecting = false;
-
-       //         Cursor.Show();
-       //     }
-       // }
-
-
-
 
         #endregion
 

@@ -15,9 +15,9 @@ namespace Toolkit.Forms
             InitializeComponent();
         }
 
-        private Bitmap _Image;
+        private Image _Image;
 
-        public Bitmap Image
+        public Image Image
         {
             get
             {
@@ -43,7 +43,7 @@ namespace Toolkit.Forms
             numericUpDownWidth.Maximum = (decimal)(Image.PhysicalDimension.Width + 1);
             numericUpDownHeight.Maximum = (decimal)(Image.PhysicalDimension.Height + 1);
 
-            imageCropControl.Bitmap = this.Image;
+            imageCropControl.Bitmap = new Bitmap(Image);
 
         }
 
@@ -62,14 +62,14 @@ namespace Toolkit.Forms
         {
 
             imageCropControl.CropRectangleChanged -= imageCropControl_CropRectangleChanged;
-            
+
             //Rectangle cropRectangle = new Rectangle(
             //    (int)(numericUpDownX.Value),
             //    (int)(numericUpDownY.Value),
             //    (int)(numericUpDownWidth.Value),
             //    (int)(numericUpDownHeight.Value));
             //imageCropControl.CropRectangle = cropRectangle;
-            
+
             imageCropControl.CropRectangleChanged += imageCropControl_CropRectangleChanged;
 
         }
