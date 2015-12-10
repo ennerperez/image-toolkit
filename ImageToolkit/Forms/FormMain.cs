@@ -8,10 +8,48 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
+
 namespace Toolkit.Forms
 {
     public partial class FormMain : Form
     {
+
+        #region Properties & Events
+
+        private Bitmap _Image;
+        public Bitmap Image
+        {
+            get
+            {
+                return _Image;
+            }
+            set
+            {
+                _Image = value;
+                OnImageChanged(EventArgs.Empty);
+            }
+        }
+
+        public event EventHandler ImageChanged;
+
+        private void OnImageChanged(EventArgs e)
+        {
+            if (ImageChanged != null)
+                ImageChanged(this, e);
+
+            labelDragDropPreview.Visible = Image == null;
+            buttonToB64.Enabled = Image != null;
+            buttonFromB64.Enabled = Image != null;
+            buttonCrop.Enabled = Image != null;
+            buttonSaveAs.Enabled = Image != null;
+            buttonRestore.Enabled = Image != null;
+
+            bufferedPanelPreview.BackgroundImage = Image;
+            trackBarCompressRatio.Enabled = Image != null;
+
+        }
+
+        #endregion
 
         public static List<string> imageFiles = new List<string>(new string[] { ".jpg", ".jpeg", ".jpe", ".jfif", ".png", ".gif" });
         public static List<string> textFiles = new List<string>(new string[] { ".txt", ".bin", ".b64" });
@@ -21,12 +59,18 @@ namespace Toolkit.Forms
             InitializeComponent();
 
             openFileDialogImage.DefaultExt = imageFiles[0];
-            
+
             openFileDialogImage.Filter = string.Format(openFileDialogImage.Filter,
                 string.Join(", *", imageFiles.ToArray()),
                 string.Join("; *", imageFiles.ToArray()),
                 string.Join(", *", textFiles.ToArray()),
                 string.Join("; *", textFiles.ToArray()));
+
+            saveFileDialogImage.DefaultExt = imageFiles[0];
+
+            saveFileDialogImage.Filter = string.Format(saveFileDialogImage.Filter,
+                string.Join(", *", imageFiles.ToArray()),
+                string.Join("; *", imageFiles.ToArray()));
 
         }
 
@@ -36,50 +80,7 @@ namespace Toolkit.Forms
             _FormAbout.ShowDialog();
         }
 
-        private void trackBarCompressRatio_Scroll(object sender, EventArgs e)
-        {
-            labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
-        }
-
-
-        private void buttonOpen_Click(object sender, EventArgs e)
-        {
-            openFileDialogImage.ShowDialog();
-        }
-
-        #region Drag & Drop
-
-        private bool validData;
-        private string lastFilename;
-        private Thread getImageThread;
-        private Bitmap nextImage;
-        private Bitmap image;
-        protected bool GetFilename(out string filename, DragEventArgs e)
-        {
-            bool ret = false;
-            filename = String.Empty;
-
-            if ((e.AllowedEffect & DragDropEffects.Copy) == DragDropEffects.Copy)
-            {
-                Array data = ((IDataObject)e.Data).GetData("FileName") as Array;
-                if (data != null)
-                {
-                    if ((data.Length == 1) && (data.GetValue(0) is String))
-                    {
-                        filename = ((string[])data)[0];
-                        string ext = Path.GetExtension(filename).ToLower();
-
-                        if (FormMain.imageFiles.Contains(ext) || FormMain.textFiles.Contains(ext))
-                        {
-                            ret = true;
-                        }
-                    }
-                }
-            }
-            return ret;
-        }
-
-
+        #region ImageLoader
 
         public delegate void AssignImageDlgt();
         protected void LoadImage()
@@ -109,8 +110,111 @@ namespace Toolkit.Forms
 
         protected void AssignImage()
         {
-            bufferedPanelPreview.BackgroundImage = nextImage;
+            Image = nextImage;
         }
+
+        #endregion
+
+        #region Open
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialogImage.ShowDialog();
+        }
+
+        private void openFileDialogImage_FileOk(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                lastFilename = openFileDialogImage.FileName;
+                LoadImage();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        #endregion
+
+        #region Save
+
+        private void buttonSaveAs_Click(object sender, EventArgs e)
+        {
+            if (bufferedPanelPreview.BackgroundImage != null)
+                saveFileDialogImage.ShowDialog();
+        }
+
+        private void saveFileDialogImage_FileOk(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                var image = bufferedPanelPreview.BackgroundImage;
+                image.Save(saveFileDialogImage.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Image = null;
+            nextImage = null;
+            if (getImageThread != null)
+                getImageThread.Abort();
+            trackBarCompressRatio.Value = 0;
+            labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
+            //_cropping = false;
+        }
+
+        private void buttonRestore_Click(object sender, EventArgs e)
+        {
+            if (Image != null)
+            {
+                bufferedPanelPreview.BackgroundImage = Image;
+            }
+        }
+
+        #region Drag & Drop
+
+        private bool validData;
+        private string lastFilename;
+        private Thread getImageThread;
+        private Bitmap nextImage;
+        //private Bitmap image;
+        protected bool GetFilename(out string filename, DragEventArgs e)
+        {
+            bool ret = false;
+            filename = String.Empty;
+
+            if ((e.AllowedEffect & DragDropEffects.Copy) == DragDropEffects.Copy)
+            {
+                Array data = ((IDataObject)e.Data).GetData("FileName") as Array;
+                if (data != null)
+                {
+                    if ((data.Length == 1) && (data.GetValue(0) is String))
+                    {
+                        filename = ((string[])data)[0];
+                        string ext = Path.GetExtension(filename).ToLower();
+
+                        if (FormMain.imageFiles.Contains(ext) || FormMain.textFiles.Contains(ext))
+                        {
+                            ret = true;
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+
+
+
 
         private void bufferedPanelPreview_DragDrop(object sender, DragEventArgs e)
         {
@@ -121,7 +225,7 @@ namespace Toolkit.Forms
                     Application.DoEvents();
                     Thread.Sleep(0);
                 }
-                image = nextImage;
+                Image = nextImage;
             }
         }
 
@@ -151,23 +255,23 @@ namespace Toolkit.Forms
 
         #endregion
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        #region Compression
+
+        private void trackBarCompressRatio_Scroll(object sender, EventArgs e)
         {
-            bufferedPanelPreview.BackgroundImage = null;
-            image = null;
-            nextImage = null;
-            if (getImageThread != null)
-                getImageThread.Abort();
-            trackBarCompressRatio.Value = 0;
             labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
         }
+
+        #endregion
+
+        #region Base64
 
         private void buttonFromB64_Click(object sender, EventArgs e)
         {
             FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Open);
             editor.StartPosition = FormStartPosition.Manual;
             editor.Height = this.Height;
-            editor.Location = new Point(this.Location.X + this.Width , this.Location.Y);
+            editor.Location = new Point(this.Location.X + this.Width, this.Location.Y);
             editor.Process += (object s, EventArgs v) => bufferedPanelPreview.BackgroundImage = editor.Image;
             editor.Show();
         }
@@ -179,33 +283,144 @@ namespace Toolkit.Forms
                 FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Save);
                 editor.StartPosition = FormStartPosition.Manual;
                 editor.Height = this.Height;
-                editor.Location = new Point(this.Location.X + this.Width , this.Location.Y);
+                editor.Location = new Point(this.Location.X + this.Width, this.Location.Y);
                 editor.Image = bufferedPanelPreview.BackgroundImage;
                 editor.Show();
             }
         }
 
+        #endregion
 
-        private void bufferedPanelPreview_BackgroundImageChanged(object sender, EventArgs e)
-        {
-            labelDragDropPreview.Visible = bufferedPanelPreview.BackgroundImage == null;
-        }
+        #region Cropping
 
-        private void openFileDialogImage_FileOk(object sender, CancelEventArgs e)
+        //private bool _cropping;
+        //private bool _selecting;
+        //private Rectangle _selection;
+
+        private void buttonCrop_Click(object sender, EventArgs e)
         {
-            try
+            var crop = new FormCrop();
+            crop.Image = Image;
+            if (crop.ShowDialog() == DialogResult.OK)
             {
-                //bufferedPanelPreview.BackgroundImage = System.Drawing.Image.FromFile(openFileDialogImage.FileName);
-                lastFilename = openFileDialogImage.FileName;
-                LoadImage();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Image = crop.Image;
             }
 
+            
+
+            //buttonCrop.BackColor = _cropping ? Color.Transparent : SystemColors.ButtonShadow;
+            //_cropping = !_cropping;
+            //if (_cropping)
+            //    bufferedPanelPreview.Cursor = Cursors.Cross;
+            //else
+            //    bufferedPanelPreview.Cursor = Cursors.Default;
+
+            //buttonOpen.Enabled = !_cropping;
+            //buttonClear.Enabled = !_cropping;
+            //buttonRestore.Enabled = !_cropping;
+            //buttonToB64.Enabled = !_cropping;
+            //buttonFromB64.Enabled = !_cropping;
+            //buttonSaveAs.Enabled = !_cropping;
+            
         }
 
-       
+       // private void bufferedPanelPreview_MouseDown(object sender, MouseEventArgs e)
+       // {
+       //     if (_cropping)
+       //     {
+       //         if (e.Button == MouseButtons.Left)
+       //         {
+       //             Cursor.Hide();
+       //             _selecting = true;
+       //             _selection = new Rectangle(new Point(e.X, e.Y), new Size());
+       //         }
+       //     }
+
+       // }
+
+       // private void bufferedPanelPreview_MouseMove(object sender, MouseEventArgs e)
+       // {
+       //     if (_cropping)
+       //     {
+       //         // Update the actual size of the selection:
+       //         if (_selecting)
+       //         {
+       //             _selection.Width = e.X - _selection.X;
+       //             _selection.Height = e.Y - _selection.Y;
+
+       //             // Redraw the picturebox:
+       //             bufferedPanelPreview.Refresh();
+       //         }
+       //     }
+       // }
+
+       // private void bufferedPanelPreview_Paint(object sender, PaintEventArgs e)
+       // {
+       //     if (_cropping)
+       //     {
+       //         if (_selecting)
+       //         {
+       //             // Draw a rectangle displaying the current selection
+       //             Pen pen = Pens.GreenYellow;
+       //             e.Graphics.DrawRectangle(pen, _selection);
+       //         }
+       //     }
+       // }
+
+       // private void bufferedPanelPreview_MouseUp(object sender, MouseEventArgs e)
+       // {
+       //     if (_cropping)
+       //     {
+       //         if (e.Button == MouseButtons.Left &&
+       //_selecting &&
+       //_selection.Size != new Size())
+       //         {
+       //             // Create cropped image:
+       //             Image img = System.Drawing.Helpers.Crop(bufferedPanelPreview.BackgroundImage, _selection);
+
+       //             // Fit image to the picturebox:
+       //             bufferedPanelPreview.BackgroundImage = System.Drawing.Helpers.Fit2Control(img, bufferedPanelPreview);
+
+       //             _selecting = false;
+       //         }
+       //         else
+       //             _selecting = false;
+
+       //         Cursor.Show();
+       //     }
+       // }
+
+
+
+
+        #endregion
+
+        #region Clipboard
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsImage())
+            {
+                Image = Clipboard.GetImage() as Bitmap;
+            }
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (bufferedPanelPreview.BackgroundImage != null)
+            {
+                Clipboard.SetImage(bufferedPanelPreview.BackgroundImage);
+            }
+        }
+
+        private void contextMenuStripImage_Opening(object sender, CancelEventArgs e)
+        {
+            pasteToolStripMenuItem.Enabled = Clipboard.ContainsImage();
+            copyToolStripMenuItem.Enabled = bufferedPanelPreview.BackgroundImage != null;
+        }
+
+        #endregion
+
+
     }
 }

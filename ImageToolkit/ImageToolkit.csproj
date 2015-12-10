@@ -49,6 +49,12 @@
     <Compile Include="Controls\BufferedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ImageCropControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageCropControl.designer.cs">
+      <DependentUpon>ImageCropControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="Forms\FormB64Editor.Designer.cs">
       <DependentUpon>FormB64Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCrop.Designer.cs">
+      <DependentUpon>FormCrop.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
@@ -76,11 +88,15 @@
     </Compile>
     <Compile Include="Structures\ApplicationInfo.cs" />
     <Compile Include="Structures\Helpers.cs" />
+    <Compile Include="Structures\MathHelper.cs" />
     <EmbeddedResource Include="Forms\FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormB64Editor.resx">
       <DependentUpon>FormB64Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCrop.resx">
+      <DependentUpon>FormCrop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
