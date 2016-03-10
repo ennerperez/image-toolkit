@@ -1,18 +1,17 @@
-# Image ToolKit for Devigners
+# Image Toolkit for Devigners
 
-Image ToolKit is an powerful to for all developers who need sometimes some kind of designer winds like serialize images...
+Image Toolkit is an powerful to for all developers who need sometimes some kind of designer winds like serialize images...
 
 ## Table of contents
 
 * [Quick start](#quick-start)
 * [Bugs and feature requests](#bugs-and-feature-requests)
 * [Documentation](#documentation)
-* [Versioning](#versioning)
 * [License](#license)
 
 ## Quick start
 
-Just download last relese not instalation required:
+Just download last release not installation required:
 
 * [Download the latest release](https://github.com/ennerperez/image-toolkit/releases/).
 
@@ -27,13 +26,6 @@ Have a bug or a feature request? Please first search for existing and closed iss
 ## Documentation
 
 ImageToolkit's documentation, included in this repo in the root directory. No more documentation required for now.
-
-## Versioning
-
-All notable changes to this project will be documented in this file.
-This project adheres to [Semantic Versioning](http://semver.org/).
-
-Sometimes I screw up, but I'll adhere to those rules whenever possible.
 
 ## License
 

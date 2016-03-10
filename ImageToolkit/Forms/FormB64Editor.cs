@@ -26,10 +26,11 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            saveFileDialogB64.DefaultExt = FormMain.textFiles[0];
+            // saveFileDialogB64
+            saveFileDialogB64.DefaultExt = Program.textFiles[0];
             saveFileDialogB64.Filter = string.Format(saveFileDialogB64.Filter,
-                string.Join(", *", FormMain.textFiles.ToArray()),
-                string.Join("; *", FormMain.textFiles.ToArray()));
+                string.Join(", *", Program.textFiles.ToArray()),
+                string.Join("; *", Program.textFiles.ToArray()));
 
             OpenMode = mode;
             switch (OpenMode)

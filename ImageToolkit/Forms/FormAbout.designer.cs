@@ -32,13 +32,13 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelAbout = new System.Windows.Forms.Label();
             this.richTextBoxChangeLog = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.linkLabelWeb = new System.Windows.Forms.LinkLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.tabPageLicense = new System.Windows.Forms.TabPage();
             this.richTextBoxLicense = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             this.tabPageLicense.SuspendLayout();
@@ -47,7 +47,7 @@
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.Location = new System.Drawing.Point(497, 323);
+            this.buttonClose.Location = new System.Drawing.Point(537, 403);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 26);
             this.buttonClose.TabIndex = 0;
@@ -67,25 +67,22 @@
             // 
             // richTextBoxChangeLog
             // 
-            this.richTextBoxChangeLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxChangeLog.Location = new System.Drawing.Point(6, 6);
+            this.richTextBoxChangeLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxChangeLog.Location = new System.Drawing.Point(3, 3);
             this.richTextBoxChangeLog.Name = "richTextBoxChangeLog";
             this.richTextBoxChangeLog.ReadOnly = true;
-            this.richTextBoxChangeLog.Size = new System.Drawing.Size(540, 225);
+            this.richTextBoxChangeLog.Size = new System.Drawing.Size(586, 311);
             this.richTextBoxChangeLog.TabIndex = 2;
             this.richTextBoxChangeLog.Text = "";
             // 
-            // pictureBox1
+            // pictureBoxIcon
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxIcon.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxIcon.TabIndex = 3;
+            this.pictureBoxIcon.TabStop = false;
             // 
             // linkLabelWeb
             // 
@@ -93,22 +90,25 @@
             this.linkLabelWeb.AutoSize = true;
             this.linkLabelWeb.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelWeb.LinkColor = System.Drawing.SystemColors.HotTrack;
-            this.linkLabelWeb.Location = new System.Drawing.Point(12, 328);
+            this.linkLabelWeb.Location = new System.Drawing.Point(12, 408);
             this.linkLabelWeb.Name = "linkLabelWeb";
-            this.linkLabelWeb.Size = new System.Drawing.Size(189, 17);
+            this.linkLabelWeb.Size = new System.Drawing.Size(148, 17);
             this.linkLabelWeb.TabIndex = 4;
             this.linkLabelWeb.TabStop = true;
-            this.linkLabelWeb.Text = "http://www.ennerperez.com.ve/";
+            this.linkLabelWeb.Text = "www.ennerperez.com.ve";
             this.linkLabelWeb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWeb_LinkClicked);
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPageLog);
             this.tabControl1.Controls.Add(this.tabPageLicense);
             this.tabControl1.Location = new System.Drawing.Point(12, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(560, 267);
+            this.tabControl1.Size = new System.Drawing.Size(600, 347);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPageLog
@@ -117,7 +117,7 @@
             this.tabPageLog.Location = new System.Drawing.Point(4, 26);
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLog.Size = new System.Drawing.Size(552, 237);
+            this.tabPageLog.Size = new System.Drawing.Size(592, 317);
             this.tabPageLog.TabIndex = 0;
             this.tabPageLog.Text = "Changelog";
             this.tabPageLog.UseVisualStyleBackColor = true;
@@ -128,20 +128,20 @@
             this.tabPageLicense.Location = new System.Drawing.Point(4, 26);
             this.tabPageLicense.Name = "tabPageLicense";
             this.tabPageLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLicense.Size = new System.Drawing.Size(552, 237);
+            this.tabPageLicense.Size = new System.Drawing.Size(592, 317);
             this.tabPageLicense.TabIndex = 1;
             this.tabPageLicense.Text = "License";
             this.tabPageLicense.UseVisualStyleBackColor = true;
             // 
             // richTextBoxLicense
             // 
-            this.richTextBoxLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.richTextBoxLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxLicense.Location = new System.Drawing.Point(6, 6);
             this.richTextBoxLicense.Name = "richTextBoxLicense";
             this.richTextBoxLicense.ReadOnly = true;
-            this.richTextBoxLicense.Size = new System.Drawing.Size(540, 225);
+            this.richTextBoxLicense.Size = new System.Drawing.Size(580, 305);
             this.richTextBoxLicense.TabIndex = 2;
             this.richTextBoxLicense.Text = "";
             // 
@@ -149,10 +149,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.linkLabelWeb);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.labelAbout);
             this.Controls.Add(this.buttonClose);
             this.DoubleBuffered = true;
@@ -167,7 +167,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About...";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPageLog.ResumeLayout(false);
             this.tabPageLicense.ResumeLayout(false);
@@ -181,7 +181,7 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label labelAbout;
         private System.Windows.Forms.RichTextBox richTextBoxChangeLog;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxIcon;
         private System.Windows.Forms.LinkLabel linkLabelWeb;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageLog;

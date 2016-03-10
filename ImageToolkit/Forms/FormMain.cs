@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Pictograms;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -13,6 +14,43 @@ namespace Toolkit.Forms
 {
     public partial class FormMain : Form
     {
+
+        public FormMain()
+        {
+            InitializeComponent();
+
+            // openFileDialogImage
+            openFileDialogImage.DefaultExt = Program.imageFiles[0];
+            openFileDialogImage.Filter = string.Format(openFileDialogImage.Filter,
+                string.Join(", *", Program.imageFiles.ToArray()),
+                string.Join("; *", Program.imageFiles.ToArray()),
+                string.Join(", *", Program.textFiles.ToArray()),
+                string.Join("; *", Program.textFiles.ToArray()));
+
+            // saveFileDialogImage
+            saveFileDialogImage.DefaultExt = Program.imageFiles[0];
+            saveFileDialogImage.Filter = string.Format(saveFileDialogImage.Filter,
+                string.Join(", *", Program.imageFiles.ToArray()),
+                string.Join("; *", Program.imageFiles.ToArray()));
+
+            // Icons
+            toolStripButtonOpen.Image = MaterialDesign.GetImage(MaterialDesign.IconType.folder_open, 48, Color.White);
+            toolStripButtonClear.Image = MaterialDesign.GetImage(MaterialDesign.IconType.layers_clear, 48, Color.White);
+            toolStripButtonCrop.Image = MaterialDesign.GetImage(MaterialDesign.IconType.crop, 48, Color.White);
+            toolStripButtonRestore.Image = MaterialDesign.GetImage(MaterialDesign.IconType.restore, 48, Color.White);
+
+            toolStripButtonToB64.Image = MaterialDesign.GetImage(MaterialDesign.IconType.keyboard_arrow_right, 48, Color.White);
+            toolStripButtonFromB64.Image = MaterialDesign.GetImage(MaterialDesign.IconType.keyboard_arrow_left, 48, Color.White);
+
+            toolStripButtonSave.Image = MaterialDesign.GetImage(MaterialDesign.IconType.save, 48, Color.White);
+
+            toolStripButtonAbout.Image = MaterialDesign.GetImage(MaterialDesign.IconType.info, 48, Color.White);
+            toolStripButtonClose.Image = MaterialDesign.GetImage(MaterialDesign.IconType.close, 48, Color.White);
+
+            copyToolStripMenuItem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
+            pasteToolStripMenuItem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.content_paste, 16, toolStripMenu.BackColor);
+
+        }
 
         #region Properties & Events
 
@@ -38,46 +76,24 @@ namespace Toolkit.Forms
                 ImageChanged(this, e);
 
             labelDragDropPreview.Visible = Image == null;
-            buttonToB64.Enabled = Image != null;
-            buttonFromB64.Enabled = Image != null;
-            buttonCrop.Enabled = Image != null;
-            buttonSaveAs.Enabled = Image != null;
-            buttonRestore.Enabled = Image != null;
+            toolStripButtonToB64.Enabled = Image != null;
+            toolStripButtonFromB64.Enabled = Image != null;
+            toolStripButtonCrop.Enabled = Image != null;
+            toolStripButtonSave.Enabled = Image != null;
+            toolStripButtonRestore.Enabled = Image != null;
 
             bufferedPanelPreview.BackgroundImage = Image;
-            trackBarCompressRatio.Enabled = Image != null;
+            //trackBarCompressRatio.Enabled = Image != null;
+
+            toolStripButtonClear.Enabled = Image != null;
 
         }
 
         #endregion
 
-        public static List<string> imageFiles = new List<string>(new string[] { ".jpg", ".jpeg", ".jpe", ".jfif", ".png", ".gif" });
-        public static List<string> textFiles = new List<string>(new string[] { ".txt", ".bin", ".b64" });
-
-        public FormMain()
-        {
-            InitializeComponent();
-
-            openFileDialogImage.DefaultExt = imageFiles[0];
-
-            openFileDialogImage.Filter = string.Format(openFileDialogImage.Filter,
-                string.Join(", *", imageFiles.ToArray()),
-                string.Join("; *", imageFiles.ToArray()),
-                string.Join(", *", textFiles.ToArray()),
-                string.Join("; *", textFiles.ToArray()));
-
-            saveFileDialogImage.DefaultExt = imageFiles[0];
-
-            saveFileDialogImage.Filter = string.Format(saveFileDialogImage.Filter,
-                string.Join(", *", imageFiles.ToArray()),
-                string.Join("; *", imageFiles.ToArray()));
-
-        }
-
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            FormAbout _FormAbout = new FormAbout();
-            _FormAbout.ShowDialog();
+
         }
 
         #region ImageLoader
@@ -86,7 +102,7 @@ namespace Toolkit.Forms
         protected void LoadImage()
         {
             var fi = new System.IO.FileInfo(lastFilename);
-            if (textFiles.Contains(fi.Extension))
+            if (Program.textFiles.Contains(fi.Extension))
             {
                 try
                 {
@@ -140,12 +156,7 @@ namespace Toolkit.Forms
 
         #region Save
 
-        private void buttonSaveAs_Click(object sender, EventArgs e)
-        {
-            if (bufferedPanelPreview.BackgroundImage != null)
-                saveFileDialogImage.ShowDialog();
-        }
-
+ 
         private void saveFileDialogImage_FileOk(object sender, CancelEventArgs e)
         {
             try
@@ -161,32 +172,13 @@ namespace Toolkit.Forms
 
         #endregion
 
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            Image = null;
-            nextImage = null;
-            if (getImageThread != null)
-                getImageThread.Abort();
-            trackBarCompressRatio.Value = 0;
-            labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
-            //_cropping = false;
-        }
-
-        private void buttonRestore_Click(object sender, EventArgs e)
-        {
-            if (Image != null)
-            {
-                bufferedPanelPreview.BackgroundImage = Image;
-            }
-        }
-
         #region Drag & Drop
 
         private bool validData;
         private string lastFilename;
         private Thread getImageThread;
         private Bitmap nextImage;
-        //private Bitmap image;
+
         protected bool GetFilename(out string filename, DragEventArgs e)
         {
             bool ret = false;
@@ -202,19 +194,13 @@ namespace Toolkit.Forms
                         filename = ((string[])data)[0];
                         string ext = Path.GetExtension(filename).ToLower();
 
-                        if (FormMain.imageFiles.Contains(ext) || FormMain.textFiles.Contains(ext))
-                        {
+                        if (Program.imageFiles.Contains(ext) || Program.textFiles.Contains(ext))
                             ret = true;
-                        }
                     }
                 }
             }
             return ret;
         }
-
-
-
-
 
         private void bufferedPanelPreview_DragDrop(object sender, DragEventArgs e)
         {
@@ -251,57 +237,13 @@ namespace Toolkit.Forms
             }
         }
 
-
-
         #endregion
 
         #region Compression
 
         private void trackBarCompressRatio_Scroll(object sender, EventArgs e)
         {
-            labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
-        }
-
-        #endregion
-
-        #region Base64
-
-        private void buttonFromB64_Click(object sender, EventArgs e)
-        {
-            FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Open);
-            editor.StartPosition = FormStartPosition.Manual;
-            editor.Height = this.Height;
-            editor.Location = new Point(this.Location.X + this.Width, this.Location.Y);
-            editor.Process += (object s, EventArgs v) => bufferedPanelPreview.BackgroundImage = editor.Image;
-            editor.Show();
-        }
-
-        private void buttonToB64_Click(object sender, EventArgs e)
-        {
-            if (bufferedPanelPreview.BackgroundImage != null)
-            {
-                FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Save);
-                editor.StartPosition = FormStartPosition.Manual;
-                editor.Height = this.Height;
-                editor.Location = new Point(this.Location.X + this.Width, this.Location.Y);
-                editor.Image = bufferedPanelPreview.BackgroundImage;
-                editor.Show();
-            }
-        }
-
-        #endregion
-
-        #region Cropping
-
-        private void buttonCrop_Click(object sender, EventArgs e)
-        {
-            var crop = new FormCrop();
-            crop.Image = bufferedPanelPreview.BackgroundImage;
-            if (crop.ShowDialog() == DialogResult.OK)
-            {
-                bufferedPanelPreview.BackgroundImage = crop.Image;
-            }
-            
+            //labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
         }
 
         #endregion
@@ -329,9 +271,76 @@ namespace Toolkit.Forms
             pasteToolStripMenuItem.Enabled = Clipboard.ContainsImage();
             copyToolStripMenuItem.Enabled = bufferedPanelPreview.BackgroundImage != null;
         }
-
+        
         #endregion
 
+        private void toolStripButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
+        private void toolStripButtonAbout_Click(object sender, EventArgs e)
+        {
+            var child = new FormAbout();
+            child.ShowDialog();
+        }
+
+        private void toolStripButtonOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialogImage.ShowDialog();
+        }
+
+        private void toolStripButtonClear_Click(object sender, EventArgs e)
+        {
+            Image = null;
+            nextImage = null;
+            if (getImageThread != null)
+                getImageThread.Abort();
+            //trackBarCompressRatio.Value = 0;
+            //labelCompressRatioPercent.Text = trackBarCompressRatio.Value.ToString() + "%";
+        }
+
+        private void toolStripButtonCrop_Click(object sender, EventArgs e)
+        {
+            var child = new FormCrop();
+            child.Image = bufferedPanelPreview.BackgroundImage;
+            if (child.ShowDialog() == DialogResult.OK)
+                bufferedPanelPreview.BackgroundImage = child.Image;
+        }
+
+        private void toolStripButtonRestore_Click(object sender, EventArgs e)
+        {
+            if (Image != null)
+                bufferedPanelPreview.BackgroundImage = Image;
+        }
+
+        private void toolStripButtonFromB64_Click(object sender, EventArgs e)
+        {
+            FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Open);
+            editor.StartPosition = FormStartPosition.Manual;
+            editor.Height = this.Height;
+            editor.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+            editor.Process += (object s, EventArgs v) => bufferedPanelPreview.BackgroundImage = editor.Image;
+            editor.Show();
+        }
+
+        private void toolStripButtonToB64_Click(object sender, EventArgs e)
+        {
+            if (bufferedPanelPreview.BackgroundImage != null)
+            {
+                FormB64Editor editor = new FormB64Editor(FormB64Editor.Mode.Save);
+                editor.StartPosition = FormStartPosition.Manual;
+                editor.Height = this.Height;
+                editor.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+                editor.Image = bufferedPanelPreview.BackgroundImage;
+                editor.Show();
+            }
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            if (bufferedPanelPreview.BackgroundImage != null)
+                saveFileDialogImage.ShowDialog();
+        }
     }
 }

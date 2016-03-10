@@ -30,116 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.buttonAbout = new System.Windows.Forms.Button();
-            this.buttonOpen = new System.Windows.Forms.Button();
-            this.buttonFromB64 = new System.Windows.Forms.Button();
-            this.trackBarCompressRatio = new System.Windows.Forms.TrackBar();
-            this.labelCompressRatioPercent = new System.Windows.Forms.Label();
-            this.buttonToB64 = new System.Windows.Forms.Button();
             this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonSaveAs = new System.Windows.Forms.Button();
-            this.buttonCrop = new System.Windows.Forms.Button();
-            this.labelCompress = new System.Windows.Forms.Label();
             this.saveFileDialogImage = new System.Windows.Forms.SaveFileDialog();
-            this.buttonRestore = new System.Windows.Forms.Button();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenu = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClose = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAbout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonCrop = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRestore = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonToB64 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFromB64 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.bufferedPanelPreview = new System.Windows.Forms.BufferedPanel();
             this.labelDragDropPreview = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCompressRatio)).BeginInit();
             this.contextMenuStripImage.SuspendLayout();
+            this.toolStripMenu.SuspendLayout();
             this.bufferedPanelPreview.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonAbout
-            // 
-            this.buttonAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAbout.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Image = ((System.Drawing.Image)(resources.GetObject("buttonAbout.Image")));
-            this.buttonAbout.Location = new System.Drawing.Point(427, 404);
-            this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(25, 25);
-            this.buttonAbout.TabIndex = 8;
-            this.toolTipMain.SetToolTip(this.buttonAbout, "About");
-            this.buttonAbout.UseVisualStyleBackColor = true;
-            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
-            // 
-            // buttonOpen
-            // 
-            this.buttonOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonOpen.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOpen.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpen.Image")));
-            this.buttonOpen.Location = new System.Drawing.Point(427, 12);
-            this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(25, 25);
-            this.buttonOpen.TabIndex = 1;
-            this.toolTipMain.SetToolTip(this.buttonOpen, "Open");
-            this.buttonOpen.UseVisualStyleBackColor = true;
-            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
-            // 
-            // buttonFromB64
-            // 
-            this.buttonFromB64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFromB64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonFromB64.Enabled = false;
-            this.buttonFromB64.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonFromB64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFromB64.Image = ((System.Drawing.Image)(resources.GetObject("buttonFromB64.Image")));
-            this.buttonFromB64.Location = new System.Drawing.Point(427, 136);
-            this.buttonFromB64.Name = "buttonFromB64";
-            this.buttonFromB64.Size = new System.Drawing.Size(25, 25);
-            this.buttonFromB64.TabIndex = 3;
-            this.toolTipMain.SetToolTip(this.buttonFromB64, "Conver from B64");
-            this.buttonFromB64.UseVisualStyleBackColor = true;
-            this.buttonFromB64.Click += new System.EventHandler(this.buttonFromB64_Click);
-            // 
-            // trackBarCompressRatio
-            // 
-            this.trackBarCompressRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarCompressRatio.AutoSize = false;
-            this.trackBarCompressRatio.Enabled = false;
-            this.trackBarCompressRatio.Location = new System.Drawing.Point(116, 408);
-            this.trackBarCompressRatio.Maximum = 100;
-            this.trackBarCompressRatio.Name = "trackBarCompressRatio";
-            this.trackBarCompressRatio.Size = new System.Drawing.Size(295, 21);
-            this.trackBarCompressRatio.TabIndex = 6;
-            this.trackBarCompressRatio.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBarCompressRatio.Visible = false;
-            this.trackBarCompressRatio.Scroll += new System.EventHandler(this.trackBarCompressRatio_Scroll);
-            // 
-            // labelCompressRatioPercent
-            // 
-            this.labelCompressRatioPercent.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelCompressRatioPercent.Location = new System.Drawing.Point(412, 408);
-            this.labelCompressRatioPercent.Name = "labelCompressRatioPercent";
-            this.labelCompressRatioPercent.Size = new System.Drawing.Size(40, 17);
-            this.labelCompressRatioPercent.TabIndex = 7;
-            this.labelCompressRatioPercent.Text = "0%";
-            this.labelCompressRatioPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelCompressRatioPercent.Visible = false;
-            // 
-            // buttonToB64
-            // 
-            this.buttonToB64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonToB64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonToB64.Enabled = false;
-            this.buttonToB64.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonToB64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonToB64.Image = ((System.Drawing.Image)(resources.GetObject("buttonToB64.Image")));
-            this.buttonToB64.Location = new System.Drawing.Point(427, 167);
-            this.buttonToB64.Name = "buttonToB64";
-            this.buttonToB64.Size = new System.Drawing.Size(25, 25);
-            this.buttonToB64.TabIndex = 2;
-            this.toolTipMain.SetToolTip(this.buttonToB64, "Conver to B64");
-            this.buttonToB64.UseVisualStyleBackColor = true;
-            this.buttonToB64.Click += new System.EventHandler(this.buttonToB64_Click);
             // 
             // openFileDialogImage
             // 
@@ -150,64 +65,6 @@
             this.openFileDialogImage.Title = "Open...";
             this.openFileDialogImage.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogImage_FileOk);
             // 
-            // buttonClear
-            // 
-            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonClear.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClear.Image = ((System.Drawing.Image)(resources.GetObject("buttonClear.Image")));
-            this.buttonClear.Location = new System.Drawing.Point(427, 43);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(25, 25);
-            this.buttonClear.TabIndex = 4;
-            this.toolTipMain.SetToolTip(this.buttonClear, "Clear");
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
-            // 
-            // buttonSaveAs
-            // 
-            this.buttonSaveAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSaveAs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonSaveAs.Enabled = false;
-            this.buttonSaveAs.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonSaveAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveAs.Image")));
-            this.buttonSaveAs.Location = new System.Drawing.Point(427, 198);
-            this.buttonSaveAs.Name = "buttonSaveAs";
-            this.buttonSaveAs.Size = new System.Drawing.Size(25, 25);
-            this.buttonSaveAs.TabIndex = 1;
-            this.toolTipMain.SetToolTip(this.buttonSaveAs, "Save");
-            this.buttonSaveAs.UseVisualStyleBackColor = true;
-            this.buttonSaveAs.Click += new System.EventHandler(this.buttonSaveAs_Click);
-            // 
-            // buttonCrop
-            // 
-            this.buttonCrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonCrop.Enabled = false;
-            this.buttonCrop.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonCrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCrop.Image = ((System.Drawing.Image)(resources.GetObject("buttonCrop.Image")));
-            this.buttonCrop.Location = new System.Drawing.Point(427, 74);
-            this.buttonCrop.Name = "buttonCrop";
-            this.buttonCrop.Size = new System.Drawing.Size(25, 25);
-            this.buttonCrop.TabIndex = 4;
-            this.toolTipMain.SetToolTip(this.buttonCrop, "Crop");
-            this.buttonCrop.UseVisualStyleBackColor = true;
-            this.buttonCrop.Click += new System.EventHandler(this.buttonCrop_Click);
-            // 
-            // labelCompress
-            // 
-            this.labelCompress.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelCompress.AutoSize = true;
-            this.labelCompress.Location = new System.Drawing.Point(12, 408);
-            this.labelCompress.Name = "labelCompress";
-            this.labelCompress.Size = new System.Drawing.Size(98, 17);
-            this.labelCompress.TabIndex = 5;
-            this.labelCompress.Text = "Compress ratio";
-            this.labelCompress.Visible = false;
-            // 
             // saveFileDialogImage
             // 
             this.saveFileDialogImage.DefaultExt = "jpg";
@@ -216,21 +73,6 @@
     " *.png |Text files (*.txt, *.bin, *.b64) | *.txt; *.bin; *.b64";
             this.saveFileDialogImage.Title = "Save...";
             this.saveFileDialogImage.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogImage_FileOk);
-            // 
-            // buttonRestore
-            // 
-            this.buttonRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonRestore.Enabled = false;
-            this.buttonRestore.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.buttonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRestore.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestore.Image")));
-            this.buttonRestore.Location = new System.Drawing.Point(427, 105);
-            this.buttonRestore.Name = "buttonRestore";
-            this.buttonRestore.Size = new System.Drawing.Size(25, 25);
-            this.buttonRestore.TabIndex = 4;
-            this.buttonRestore.UseVisualStyleBackColor = true;
-            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
             // 
             // contextMenuStripImage
             // 
@@ -257,20 +99,186 @@
             this.pasteToolStripMenuItem.Text = "&Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
+            // toolStripMenu
+            // 
+            this.toolStripMenu.AutoSize = false;
+            this.toolStripMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.toolStripMenu.CanOverflow = false;
+            this.toolStripMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStripMenu.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStripMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonOpen,
+            this.toolStripButtonClose,
+            this.toolStripButtonAbout,
+            this.toolStripButtonClear,
+            this.toolStripSeparator1,
+            this.toolStripButtonCrop,
+            this.toolStripButtonRestore,
+            this.toolStripSeparator2,
+            this.toolStripButtonToB64,
+            this.toolStripButtonFromB64,
+            this.toolStripSeparator4,
+            this.toolStripButtonSave});
+            this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
+            this.toolStripMenu.Name = "toolStripMenu";
+            this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStripMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripMenu.Size = new System.Drawing.Size(48, 561);
+            this.toolStripMenu.TabIndex = 9;
+            // 
+            // toolStripButtonOpen
+            // 
+            this.toolStripButtonOpen.AutoSize = false;
+            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOpen.Image")));
+            this.toolStripButtonOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonOpen.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
+            this.toolStripButtonOpen.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonOpen.Text = "&Open...";
+            this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
+            // 
+            // toolStripButtonClose
+            // 
+            this.toolStripButtonClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonClose.AutoSize = false;
+            this.toolStripButtonClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClose.Image")));
+            this.toolStripButtonClose.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonClose.Name = "toolStripButtonClose";
+            this.toolStripButtonClose.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonClose.Text = "&Close";
+            this.toolStripButtonClose.Click += new System.EventHandler(this.toolStripButtonClose_Click);
+            // 
+            // toolStripButtonAbout
+            // 
+            this.toolStripButtonAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonAbout.AutoSize = false;
+            this.toolStripButtonAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAbout.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAbout.Image")));
+            this.toolStripButtonAbout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAbout.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonAbout.Name = "toolStripButtonAbout";
+            this.toolStripButtonAbout.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonAbout.Text = "&About...";
+            this.toolStripButtonAbout.Click += new System.EventHandler(this.toolStripButtonAbout_Click);
+            // 
+            // toolStripButtonClear
+            // 
+            this.toolStripButtonClear.AutoSize = false;
+            this.toolStripButtonClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonClear.Enabled = false;
+            this.toolStripButtonClear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClear.Image")));
+            this.toolStripButtonClear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClear.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonClear.Name = "toolStripButtonClear";
+            this.toolStripButtonClear.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonClear.Text = "&Clear";
+            this.toolStripButtonClear.Click += new System.EventHandler(this.toolStripButtonClear_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(47, 6);
+            // 
+            // toolStripButtonCrop
+            // 
+            this.toolStripButtonCrop.AutoSize = false;
+            this.toolStripButtonCrop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCrop.Enabled = false;
+            this.toolStripButtonCrop.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrop.Image")));
+            this.toolStripButtonCrop.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonCrop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCrop.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonCrop.Name = "toolStripButtonCrop";
+            this.toolStripButtonCrop.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonCrop.Text = "C&rop";
+            this.toolStripButtonCrop.Click += new System.EventHandler(this.toolStripButtonCrop_Click);
+            // 
+            // toolStripButtonRestore
+            // 
+            this.toolStripButtonRestore.AutoSize = false;
+            this.toolStripButtonRestore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRestore.Enabled = false;
+            this.toolStripButtonRestore.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRestore.Image")));
+            this.toolStripButtonRestore.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonRestore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRestore.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonRestore.Name = "toolStripButtonRestore";
+            this.toolStripButtonRestore.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonRestore.Text = "C&rop";
+            this.toolStripButtonRestore.Click += new System.EventHandler(this.toolStripButtonRestore_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(47, 6);
+            // 
+            // toolStripButtonToB64
+            // 
+            this.toolStripButtonToB64.AutoSize = false;
+            this.toolStripButtonToB64.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonToB64.Enabled = false;
+            this.toolStripButtonToB64.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonToB64.Image")));
+            this.toolStripButtonToB64.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonToB64.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonToB64.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonToB64.Name = "toolStripButtonToB64";
+            this.toolStripButtonToB64.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonToB64.Text = "Convert &to B64";
+            this.toolStripButtonToB64.Click += new System.EventHandler(this.toolStripButtonToB64_Click);
+            // 
+            // toolStripButtonFromB64
+            // 
+            this.toolStripButtonFromB64.AutoSize = false;
+            this.toolStripButtonFromB64.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFromB64.Enabled = false;
+            this.toolStripButtonFromB64.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFromB64.Image")));
+            this.toolStripButtonFromB64.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonFromB64.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFromB64.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonFromB64.Name = "toolStripButtonFromB64";
+            this.toolStripButtonFromB64.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonFromB64.Text = "Convert &from B64";
+            this.toolStripButtonFromB64.Click += new System.EventHandler(this.toolStripButtonFromB64_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(47, 6);
+            // 
+            // toolStripButtonSave
+            // 
+            this.toolStripButtonSave.AutoSize = false;
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSave.Enabled = false;
+            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
+            this.toolStripButtonSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(48, 48);
+            this.toolStripButtonSave.Text = "&Save...";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+            // 
             // bufferedPanelPreview
             // 
             this.bufferedPanelPreview.AllowDrop = true;
-            this.bufferedPanelPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bufferedPanelPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bufferedPanelPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bufferedPanelPreview.ContextMenuStrip = this.contextMenuStripImage;
             this.bufferedPanelPreview.Controls.Add(this.labelDragDropPreview);
-            this.bufferedPanelPreview.Location = new System.Drawing.Point(12, 12);
+            this.bufferedPanelPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bufferedPanelPreview.Location = new System.Drawing.Point(48, 0);
             this.bufferedPanelPreview.Name = "bufferedPanelPreview";
             this.bufferedPanelPreview.Padding = new System.Windows.Forms.Padding(9);
-            this.bufferedPanelPreview.Size = new System.Drawing.Size(409, 417);
+            this.bufferedPanelPreview.Size = new System.Drawing.Size(584, 561);
             this.bufferedPanelPreview.TabIndex = 0;
             this.bufferedPanelPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragDrop);
             this.bufferedPanelPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragEnter);
@@ -284,7 +292,7 @@
             this.labelDragDropPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelDragDropPreview.Location = new System.Drawing.Point(9, 9);
             this.labelDragDropPreview.Name = "labelDragDropPreview";
-            this.labelDragDropPreview.Size = new System.Drawing.Size(389, 397);
+            this.labelDragDropPreview.Size = new System.Drawing.Size(566, 543);
             this.labelDragDropPreview.TabIndex = 0;
             this.labelDragDropPreview.Text = "Drag && Drop\r\nAny image or text based here";
             this.labelDragDropPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -295,55 +303,46 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(464, 441);
-            this.Controls.Add(this.buttonAbout);
+            this.ClientSize = new System.Drawing.Size(632, 561);
             this.Controls.Add(this.bufferedPanelPreview);
-            this.Controls.Add(this.labelCompress);
-            this.Controls.Add(this.labelCompressRatioPercent);
-            this.Controls.Add(this.buttonRestore);
-            this.Controls.Add(this.buttonCrop);
-            this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.buttonFromB64);
-            this.Controls.Add(this.buttonToB64);
-            this.Controls.Add(this.buttonSaveAs);
-            this.Controls.Add(this.buttonOpen);
-            this.Controls.Add(this.trackBarCompressRatio);
+            this.Controls.Add(this.toolStripMenu);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(480, 480);
+            this.MinimumSize = new System.Drawing.Size(528, 480);
             this.Name = "FormMain";
             this.Text = "Image Toolkit";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarCompressRatio)).EndInit();
             this.contextMenuStripImage.ResumeLayout(false);
+            this.toolStripMenu.ResumeLayout(false);
+            this.toolStripMenu.PerformLayout();
             this.bufferedPanelPreview.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonAbout;
-        private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.Label labelDragDropPreview;
-        private System.Windows.Forms.Button buttonFromB64;
-        private System.Windows.Forms.TrackBar trackBarCompressRatio;
-        private System.Windows.Forms.Label labelCompressRatioPercent;
-        private System.Windows.Forms.Button buttonToB64;
         private System.Windows.Forms.BufferedPanel bufferedPanelPreview;
         private System.Windows.Forms.OpenFileDialog openFileDialogImage;
-        private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.ToolTip toolTipMain;
-        private System.Windows.Forms.Label labelCompress;
-        private System.Windows.Forms.Button buttonSaveAs;
         private System.Windows.Forms.SaveFileDialog saveFileDialogImage;
-        private System.Windows.Forms.Button buttonCrop;
-        private System.Windows.Forms.Button buttonRestore;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripImage;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStripMenu;
+        private System.Windows.Forms.ToolStripButton toolStripButtonOpen;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClose;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAbout;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClear;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCrop;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRestore;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFromB64;
+        private System.Windows.Forms.ToolStripButton toolStripButtonToB64;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 
