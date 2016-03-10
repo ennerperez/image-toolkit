@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Enner Pérez")]
 [assembly: AssemblyProduct("ImageToolkit")]
-[assembly: AssemblyCopyright("Copyright © Enner Pérez 2015")]
+[assembly: AssemblyCopyright("Copyright © Enner Pérez 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
