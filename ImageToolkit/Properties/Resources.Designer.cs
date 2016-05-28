@@ -61,16 +61,6 @@ namespace Toolkit.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
-        /// </summary>
-        internal static System.Drawing.Icon App {
-            get {
-                object obj = ResourceManager.GetObject("App", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
         internal static byte[] CHANGELOG {

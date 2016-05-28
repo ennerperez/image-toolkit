@@ -117,81 +117,278 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAkAAAARAAAAFQAA
-        ABYAAAAWAAAAFgAAABYAAAAVAAAAEQAAAAkAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAABgAAABAAAAAbAAAAKQAA
-        ADgAAABBAAAAQwAAAEMAAABDAAAAQwAAAEEAAAA4AAAAKQAAABsAAAAQAAAABgAAAAEAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAA0AAAAgAAAANRoO
-        BEx+RBKZpFcW3q9dF/+vXRf/r10X/69dF/+wXRj/sF4Y/6RYF95+RBKZGg4ETAAAADUAAAAgAAAADQAA
-        AAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAWAAAALjsg
-        CFqkWBXfsV0X/7psJf+/cyz/xHsx/8R6L//Bdyz/wHUo/79zJv+9cCT/uWoe/7ZlHP+xXhj/pFkX3zsg
-        CVoAAAAuAAAAFgAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAGQAA
-        ADiRTRS0sF4Y/8F5Mf/Pi0X/3KJj/+q7g//10J7/+dOi//jSof/40aD/99Cf//PLlv/lsXb/0ZJP/79z
-        J/+3Zhz/sV4Y/5JOFbQAAAA4AAAAGQAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAA
-        ABkAAAA6qFgV7blrJv/Oi0X/5bJ3//nUpP/yypb/6r2F/+O0eP/gsHH/4LBx/+Cwcv/gsXL/47R4/+m8
-        gf/wxI7/8smV/9meXf+7ax3/s2IZ/6lbGO0AAAA6AAAAGQAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAMAAAAWAAAAOKdXFOvEfDj/2Jxa//XNnf/1z5z/4bF0/9+sbv/frW7/4K1u/9+tbv/frG7/36xu/+Ct
-        bv/grW//4K1v/9+ub//isnT/8MWO/+y8hP/Ddy7/t2Yc/6laGOsAAAA4AAAAFgAAAAMAAAAAAAAAAAAA
-        AAAAAAABAAAADQAAAC6pWRTsxn88/96lZv/726v/67+H/92qav/fq2v/36xs/9+sbP/fqmr/3adl/9yk
-        YP/cpGD/3adl/9+qav/frG3/36xt/9+sbP/erGz/6bl///PIlP/Gfzb/t2cd/6pcGOwAAAAuAAAADQAA
-        AAEAAAAAAAAAAAAAAAYAAAAfkk4SsLtvKv/fpWf//N2u/+i7gf/bpmf/3ahp/92pav/dqWr/3ahp/9uk
-        Yv/v1rn////////////v1rn/26Ri/92oaf/dqWr/3alq/92paf/cqGj/5rV5//PIlP/EejD/s2Ma/5RP
-        FbAAAAAfAAAABgAAAAAAAAAAAAAAEEMkCUywXRf/259g//jXpv/pvYX/2qRj/9umZv/cp2f/3Kdn/9yn
-        Z//bpmX/2Z9a///////////////////////Zn1r/26Zl/9ynZ//cp2f/3Kdn/9ynZv/bpmX/5rd8/+y8
-        hf+9byL/sF4Y/0MlCkwAAAAQAAAAAAAAAAMAAAAbpVYU3c6MSv/wxZD/9tOg/9mgXv/ao2H/26Rj/9uk
-        Y//bpGP/26Rj/9uiYf/YnFX//////////////////////9icVf/bomH/26Rj/9ukY//bpGP/26Rj/9uj
-        Yv/aomH/78OM/9qgYf+6ayH/plkY3QAAABsAAAADAAAACScVBTKwXhf/5rB0///jtv/bpmT/2KBd/9mi
-        YP/ZomD/2aJg/9miYP/ZomD/2aFf/9edV//t0rP////////////t0rP/151X/9mhX//ZomD/2aJg/9mi
-        YP/ZomD/2aJg/9ihXv/bpWX/88mV/8N6MP+wXxf/JxUGMgAAAAkAAAARh0gRjcV/Pf/wxI7/8s+c/9ac
-        V//Yn1z/2KBd/9igXf/YoF3/2KBd/9igXf/YoFz/151Y/9SXTf/SkEL/0pBC/9SXTv/XnVj/2KBd/9ig
-        Xf/YoF3/2KBd/9igXf/YoF3/2KBc/9aeWv/tv4j/1ZhW/7hoIP+JSRONAAAAEQAAABWkVhLa1phY//rY
-        qP/ktnr/1ZpW/9edWv/XnVr/151a/9edWv/XnVr/151a/9edWf/VmVT/47uL////////////3Ktx/9aa
-        Vf/XnVr/151a/9edWv/XnVr/151a/9edWv/XnVr/1ptY/+Gucf/ntXz/vXAn/6ZZF9oAAAAVAAAAFq1Z
-        Ev/nsnj//+i8/9efXP/UmVT/1ZtX/9WbV//Vm1f/1ZtX/9WbV//Vm1f/1ZtW/9OWT//r0LD/////////
-        ///gtIH/0pVN/9SaVf/Vm1f/1ZtX/9WbV//Vm1f/1ZtX/9WbV//UmlX/2J5c//TMmf/DejH/r10X/wAA
-        ABYAAAAWrFgQ/+27gf//68H/0JFL/9OWUv/UmFT/1JhU/9SYVP/UmFT/1JhU/9SYVP/UmFP/0pRO/92u
-        dv////////////ry6f/SlEv/0pNM/9SWUv/UmFT/1JhU/9SYVP/UmFT/1JhU/9SXU//RlE//+NKh/8aA
-        N/+vXBb/AAAAFgAAABasVxD/772G///sw//Pj0f/0pVO/9OWUP/TllD/05ZQ/9OWUP/TllD/05ZQ/9OW
-        UP/SlE3/z41B//z17/////////////ry6v/Yo2X/0ZBG/9OUTv/TllD/05ZQ/9OWUP/TllD/05VP/9CS
-        Sv/506L/yYM6/69cFv8AAAAWAAAAFqxXD//xwIn//+3E/8yNQ//Qk0v/0ZRN/9GUTf/RlE3/0ZRN/9GU
-        Tf/RlEz/0ZRM/9GTS//PkEf/0JBH//n07P/////////////////XomT/z5BG/9GUTP/RlE3/0ZRN/9GU
-        Tf/Rk0z/zpBH//nUpP/LhT//r1wW/wAAABYAAAAVrFcP//TFj///78b/y4k//8+PSP/QkUr/0JFK/9CR
-        Sv/QkUr/z49I/86NRP/OjEL/zo1E/8+PRv/OjEL/zo1F//ny6/////////////bs3//NiTz/0I9I/9CR
-        Sv/QkUr/0JFK/9CQSP/NjEP/+tWl/82JQ/+vXBX/AAAAFQAAABGsWBD/8MKK///uxf/Qk03/zoxE/8+P
-        R//Pj0f/z49H/8+ORv/Nij//2qly/+XCm//esoH/zYk9/86MQ//MiT7/zIg6//v38f///////////8qE
-        Nf/OjUT/z49H/8+PR//Pj0f/zo1E/9GTTP/406H/zYpE/69cFv8AAAARAAAACaZWEdbfp2z//+W4/+Cs
-        bv/Khz7/zYtD/82MRP/NjET/zIpC/8mDNv////////////78+v/Khzv/yoQ3/8mEN//Feyj/+O3i////
-        ////////yIEx/8yKQf/NjET/zYxE/82MRP/LiUD/26Vk/+/Ci//Gfzr/qFkV1gAAAAkAAAADmlESfM2K
-        TP/82qv/8c+a/8iCN//LiD//zIpB/8yKQf/MiT//yYI0//br3/////////////Tn2P/UnmD/1Z5h//Dd
-        yP/////////////9/P/IgTL/zIk//8yKQf/MikH/y4k//8mFOv/rv4f/4q5y/750L/+bUxV8AAAAAwAA
-        AABLKAoasFwV//zTof//8Mn/zItC/8mEOf/LiD3/y4g+/8uIPf/Jgzf/0ZdX////////////////////
-        ////////////////////////0ZZW/8mDNv/LiD3/y4g+/8uIPv/JhTr/zYxC//rXqP/ZnVz/sF4X/0so
-        CxoAAAAAAAAAAAAAAAaoVxLW3qNq///htP/21qT/xHwu/8eCN//JhTr/yYU6/8iDOP/GfzD/zItE//Hg
-        zf//////////////////////8eDM/9CVVP/Gfy//yIM3/8mFOv/JhTr/yIM3/8V+Mf/vxpD/672F/8mD
-        Qf+qWRXWAAAABgAAAAAAAAAAAAAAAXxCECmvXRb/+M2Z///uw//grm//w3st/8eBNP/Igzf/yIM3/8iC
-        Nf/GfzD/xHsp/8N4JP/CdiL/wnYi/8N4JP/Eein/xn4v/8eBNf/Igzf/yIM3/8eBNf/FfS//3KZm//fT
-        ov/anVz/r14X/3xDEikAAAABAAAAAAAAAAAAAAAAAAAAA6RWE5zEfTz//tmn///zyv/apGP/wngq/8V9
-        Mf/HfzP/x4A0/8d/M//HfjL/xn4x/8Z+Mf/GfjH/xn4x/8d+Mv/HfzP/x4A0/8d/M//GfjH/w3or/9if
-        Xf/93rD/46xx/7xwLP+mWBWcAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABapXEefbn2T//9qq///z
-        yv/dq2v/v3Qk/8J5K//EfC//xX0w/8V+Mf/FfjH/xX4x/8V+Mf/FfjH/xX4x/8V9MP/EfC//w3os/8B2
-        Jv/bpWT//uCy/+e0e//LiEX/rFoV5wAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABapW
-        D+Xbn2T//9qq///uxf/11KL/xYAy/79zIv/Bdif/wnkp/8N6K//Deiz/w3os/8N6K//CeSr/wXcn/790
-        I//GfzL/8MqU//vcrf/pt37/zYpJ/6tZE+UAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAABatXEebFfDz/+8+d///kuP//88r/78qT/9ifXP/FfTH/vW0c/71uHf+9bh3/vW4c/8V+
-        MP/XnFr/7cON///muv/20J3/5rF2/790MP+tWhTmAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA6lYE5mvXRb/4Kdu///ZqP//37H//+i9///wxv//8Mj//+/H///u
-        xv//7cT//+rA//3fsf/30J3/8cGL/9aXWf+vXRf/qlkVmQAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZdRFCOqWBLTr10W/9CPUP/krXT/+MyY//vR
-        nv/6zpv/98yZ//bKlv/xwYv/3aJo/8qGR/+wXhb/q1oU05dRFSMAAAABAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACKShIOplcTcqpY
-        EdGsVw//q1YO/6tWDv+rVg7/rFcP/6xYEP+qWRLRp1gUcopKEw4AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAA/8AD//4AAH/8AAA/+AAAH/AAAA/gAAAHwAAAA4AAAAGAAAABgAAAAQAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAGAAAABgAAAAcAA
-        AAPgAAAH8AAAD/gAAB/8AAA//gAAf//AA/8=
-</value>
+  <data name="buttonClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>537, 403</value>
+  </data>
+  <data name="buttonClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 26</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonClose.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Name" xml:space="preserve">
+    <value>buttonClose</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelAbout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 9</value>
+  </data>
+  <data name="labelAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 34</value>
+  </data>
+  <data name="labelAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelAbout.Text" xml:space="preserve">
+    <value>{0} - Version: {1}
+{2}</value>
+  </data>
+  <data name="labelAbout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;labelAbout.Name" xml:space="preserve">
+    <value>labelAbout</value>
+  </data>
+  <data name="&gt;&gt;labelAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAbout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelAbout.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxChangeLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxChangeLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="richTextBoxChangeLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 311</value>
+  </data>
+  <data name="richTextBoxChangeLog.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="richTextBoxChangeLog.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxChangeLog.Name" xml:space="preserve">
+    <value>richTextBoxChangeLog</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxChangeLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxChangeLog.Parent" xml:space="preserve">
+    <value>tabPageLog</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxChangeLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBoxIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="pictureBoxIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="pictureBoxIcon.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBoxIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxIcon.Name" xml:space="preserve">
+    <value>pictureBoxIcon</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxIcon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxIcon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="linkLabelWeb.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="linkLabelWeb.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabelWeb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 408</value>
+  </data>
+  <data name="linkLabelWeb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="linkLabelWeb.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="linkLabelWeb.Text" xml:space="preserve">
+    <value>www.ennerperez.com.ve</value>
+  </data>
+  <data name="&gt;&gt;linkLabelWeb.Name" xml:space="preserve">
+    <value>linkLabelWeb</value>
+  </data>
+  <data name="&gt;&gt;linkLabelWeb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabelWeb.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabelWeb.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="tabPageLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="tabPageLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>592, 317</value>
+  </data>
+  <data name="tabPageLog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPageLog.Text" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="&gt;&gt;tabPageLog.Name" xml:space="preserve">
+    <value>tabPageLog</value>
+  </data>
+  <data name="&gt;&gt;tabPageLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageLog.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="richTextBoxLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="richTextBoxLicense.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="richTextBoxLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>580, 305</value>
+  </data>
+  <data name="richTextBoxLicense.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="richTextBoxLicense.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxLicense.Name" xml:space="preserve">
+    <value>richTextBoxLicense</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxLicense.Parent" xml:space="preserve">
+    <value>tabPageLicense</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxLicense.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageLicense.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="tabPageLicense.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>592, 317</value>
+  </data>
+  <data name="tabPageLicense.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPageLicense.Text" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="&gt;&gt;tabPageLicense.Name" xml:space="preserve">
+    <value>tabPageLicense</value>
+  </data>
+  <data name="&gt;&gt;tabPageLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageLicense.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageLicense.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 347</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>624, 441</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormAbout</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

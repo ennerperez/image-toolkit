@@ -13,6 +13,9 @@ namespace Toolkit.Forms
         public FormCrop()
         {
             InitializeComponent();
+
+            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+
         }
 
         private Image _Image;

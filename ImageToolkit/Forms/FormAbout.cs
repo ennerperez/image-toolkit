@@ -15,6 +15,8 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
+            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+
             labelAbout.Text = string.Format(labelAbout.Text,
                 ApplicationInfo.Description,
                 ApplicationInfo.Version.ToString(),
@@ -23,7 +25,7 @@ namespace Toolkit.Forms
             richTextBoxChangeLog.Text = System.Text.Encoding.UTF8.GetString(Properties.Resources.CHANGELOG);
             richTextBoxLicense.Text = System.Text.Encoding.UTF8.GetString(Properties.Resources.LICENSE);
 
-            pictureBoxIcon.Image = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location).ToBitmap();
+            pictureBoxIcon.Image = Icon.ToBitmap();
 
         }
 

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Pictograms;
 using System.IO;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-
+using System.Windows.Forms.Pictograms;
 
 namespace Toolkit.Forms
 {
@@ -18,6 +15,8 @@ namespace Toolkit.Forms
         public FormMain()
         {
             InitializeComponent();
+
+            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
 
             // openFileDialogImage
             openFileDialogImage.DefaultExt = Program.imageFiles[0];
@@ -34,21 +33,21 @@ namespace Toolkit.Forms
                 string.Join("; *", Program.imageFiles.ToArray()));
 
             // Icons
-            toolStripButtonOpen.Image = MaterialDesign.GetImage(MaterialDesign.IconType.folder_open, 48, Color.White);
-            toolStripButtonClear.Image = MaterialDesign.GetImage(MaterialDesign.IconType.layers_clear, 48, Color.White);
-            toolStripButtonCrop.Image = MaterialDesign.GetImage(MaterialDesign.IconType.crop, 48, Color.White);
-            toolStripButtonRestore.Image = MaterialDesign.GetImage(MaterialDesign.IconType.restore, 48, Color.White);
+            toolStripButtonOpen.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.folder_open, 48, Color.White);
+            toolStripButtonClear.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.layers_clear, 48, Color.White);
+            toolStripButtonCrop.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.crop, 48, Color.White);
+            toolStripButtonRestore.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.restore, 48, Color.White);
 
-            toolStripButtonToB64.Image = MaterialDesign.GetImage(MaterialDesign.IconType.keyboard_arrow_right, 48, Color.White);
-            toolStripButtonFromB64.Image = MaterialDesign.GetImage(MaterialDesign.IconType.keyboard_arrow_left, 48, Color.White);
+            toolStripButtonToB64.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.keyboard_arrow_right, 48, Color.White);
+            toolStripButtonFromB64.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.keyboard_arrow_left, 48, Color.White);
 
-            toolStripButtonSave.Image = MaterialDesign.GetImage(MaterialDesign.IconType.save, 48, Color.White);
+            toolStripButtonSave.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.save, 48, Color.White);
 
-            toolStripButtonAbout.Image = MaterialDesign.GetImage(MaterialDesign.IconType.info, 48, Color.White);
-            toolStripButtonClose.Image = MaterialDesign.GetImage(MaterialDesign.IconType.close, 48, Color.White);
+            toolStripButtonAbout.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.info, 48, Color.White);
+            toolStripButtonClose.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.close, 48, Color.White);
 
-            copyToolStripMenuItem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
-            pasteToolStripMenuItem.Image = MaterialDesign.GetImage(MaterialDesign.IconType.content_paste, 16, toolStripMenu.BackColor);
+            copyToolStripMenuItem.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
+            pasteToolStripMenuItem.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.content_paste, 16, toolStripMenu.BackColor);
 
         }
 
