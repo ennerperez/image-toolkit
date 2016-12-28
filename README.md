@@ -12,6 +12,7 @@ See the [changelog](CHANGELOG.md) for changes.
 
 ## Roadmap
 
+- [ ] Chrome key
 - [ ] Spanish translation
 
 ## Table of contents

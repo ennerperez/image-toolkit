@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ImageMagick;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Pictograms;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.Pictograms;
@@ -33,21 +35,31 @@ namespace Toolkit.Forms
                 string.Join("; *", Program.imageFiles.ToArray()));
 
             // Icons
-            toolStripButtonOpen.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.folder_open, 48, Color.White);
-            toolStripButtonClear.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.layers_clear, 48, Color.White);
-            toolStripButtonCrop.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.crop, 48, Color.White);
-            toolStripButtonRestore.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.restore, 48, Color.White);
+            toolStripButtonOpen.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
+            toolStripButtonClear.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.layers_clear, 48, Color.White);
+            toolStripButtonCrop.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.crop, 48, Color.White);
+            toolStripButtonChromaKey.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.filter_frames, 48, Color.White);
+            toolStripButtonRestore.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.restore, 48, Color.White);
 
-            toolStripButtonToB64.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.keyboard_arrow_right, 48, Color.White);
-            toolStripButtonFromB64.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.keyboard_arrow_left, 48, Color.White);
+            toolStripButtonToB64.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.keyboard_arrow_right, 48, Color.White);
+            toolStripButtonFromB64.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.keyboard_arrow_left, 48, Color.White);
 
-            toolStripButtonSave.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.save, 48, Color.White);
+            toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, Color.White);
 
-            toolStripButtonAbout.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.info, 48, Color.White);
-            toolStripButtonClose.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.close, 48, Color.White);
+            toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, Color.White);
+            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, Color.White);
 
-            copyToolStripMenuItem.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
-            pasteToolStripMenuItem.SetImage(MaterialDesign.Instance,MaterialDesign.IconType.content_paste, 16, toolStripMenu.BackColor);
+            copyToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
+            pasteToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.content_paste, 16, toolStripMenu.BackColor);
+
+#if DEBUG
+            if (!System.IO.Directory.Exists(@"..\..\Resources\"))
+                System.IO.Directory.CreateDirectory(@"..\..\Resources\");
+            foreach (var item in this.toolStripMenu.Items.OfType<ToolStripButton>())
+            {
+                item.Image.Save(string.Format(@"..\..\Resources\{0}.png", item.Name));
+            }
+#endif
 
         }
 
@@ -78,6 +90,7 @@ namespace Toolkit.Forms
             toolStripButtonToB64.Enabled = Image != null;
             toolStripButtonFromB64.Enabled = Image != null;
             toolStripButtonCrop.Enabled = Image != null;
+            toolStripButtonChromaKey.Enabled = Image != null;
             toolStripButtonSave.Enabled = Image != null;
             toolStripButtonRestore.Enabled = Image != null;
 
@@ -106,7 +119,7 @@ namespace Toolkit.Forms
                 try
                 {
                     var b64 = string.Join("", System.IO.File.ReadAllLines(lastFilename));
-                    nextImage = new Bitmap(System.Drawing.Helpers.FromBase64(b64));
+                    nextImage = new Bitmap(Platform.Support.Drawing.ImageHelper.FromBase64(b64));
                     this.Invoke(new AssignImageDlgt(AssignImage));
                 }
                 catch (Exception ex)
@@ -155,7 +168,7 @@ namespace Toolkit.Forms
 
         #region Save
 
- 
+
         private void saveFileDialogImage_FileOk(object sender, CancelEventArgs e)
         {
             try
@@ -270,7 +283,7 @@ namespace Toolkit.Forms
             pasteToolStripMenuItem.Enabled = Clipboard.ContainsImage();
             copyToolStripMenuItem.Enabled = bufferedPanelPreview.BackgroundImage != null;
         }
-        
+
         #endregion
 
         private void toolStripButtonClose_Click(object sender, EventArgs e)
@@ -340,6 +353,14 @@ namespace Toolkit.Forms
         {
             if (bufferedPanelPreview.BackgroundImage != null)
                 saveFileDialogImage.ShowDialog();
+        }
+
+        private void toolStripButtonChromaKey_Click(object sender, EventArgs e)
+        {
+            var child = new FormChroma();
+            child.Image = bufferedPanelPreview.BackgroundImage;
+            if (child.ShowDialog() == DialogResult.OK)
+                bufferedPanelPreview.BackgroundImage = child.Image;
         }
     }
 }

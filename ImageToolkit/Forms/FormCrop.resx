@@ -505,7 +505,7 @@
     <value>imageCropControl</value>
   </data>
   <data name="&gt;&gt;imageCropControl.Type" xml:space="preserve">
-    <value>OpenLiveWriter.Controls.ImageCropControl, ImageToolkit, Version=1.0.5992.26886, Culture=neutral, PublicKeyToken=null</value>
+    <value>OpenLiveWriter.Controls.ImageCropControl, ImageToolkit, Version=1.0.6206.21642, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;imageCropControl.Parent" xml:space="preserve">
     <value>$this</value>

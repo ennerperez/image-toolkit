@@ -42,6 +42,7 @@
             this.toolStripButtonAbout = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonChromaKey = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCrop = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRestore = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -107,6 +108,7 @@
             this.toolStripButtonAbout,
             this.toolStripButtonClear,
             this.toolStripSeparator1,
+            this.toolStripButtonChromaKey,
             this.toolStripButtonCrop,
             this.toolStripButtonRestore,
             this.toolStripSeparator2,
@@ -155,6 +157,14 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // toolStripButtonChromaKey
+            // 
+            resources.ApplyResources(this.toolStripButtonChromaKey, "toolStripButtonChromaKey");
+            this.toolStripButtonChromaKey.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonChromaKey.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonChromaKey.Name = "toolStripButtonChromaKey";
+            this.toolStripButtonChromaKey.Click += new System.EventHandler(this.toolStripButtonChromaKey_Click);
             // 
             // toolStripButtonCrop
             // 
@@ -266,6 +276,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButtonChromaKey;
     }
 }
 
