@@ -1,12 +1,14 @@
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 
+using Platform.Support.Maths;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Media;
 using System.Text;
 using System.Windows.Forms;
@@ -930,9 +932,9 @@ namespace OpenLiveWriter.Controls
 
             public override Rectangle AdjustRectangle(Rectangle cont, Rectangle rect, int xOffset, int yOffset, int xGrow, int yGrow)
             {
-                Debug.Assert(MathHelper.Max(xOffset, yOffset, xGrow, yGrow) <= 1,
+                Debug.Assert((new[] { xOffset, yOffset, xGrow, yGrow }).Max() <= 1,
                     "AdjustRectangle doesn't work well with values larger than 1--edge cases in FixedAspectRatioCropStrategy");
-                Debug.Assert(MathHelper.Min(xOffset, yOffset, xGrow, yGrow) >= -1,
+                Debug.Assert((new[] { xOffset, yOffset, xGrow, yGrow }).Min() >= -1,
                     "AdjustRectangle doesn't work well with values larger than 1--edge cases in FixedAspectRatioCropStrategy");
                 Debug.Assert((xOffset == 0 && yOffset == 0) || (xGrow == 0 && yGrow == 0),
                     "Beware of changing offset and size with the same call--weird things may happen as you approach the edges of the container");

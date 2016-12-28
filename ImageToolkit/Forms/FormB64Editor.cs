@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Platform.Support;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +59,7 @@ namespace Toolkit.Forms
                     {
                         if (!string.IsNullOrEmpty(textBoxB64.Text))
                         {
-                            Image = System.Drawing.Helpers.FromBase64(textBoxB64.Text.Replace("\r\n",""));
+                            Image = Platform.Support.Drawing.ImageHelper.FromBase64(textBoxB64.Text.Replace("\r\n",""));
                             DialogResult = DialogResult.OK;
                             if (Process != null)
                                 Process.Invoke(this, new EventArgs());
@@ -101,7 +102,7 @@ namespace Toolkit.Forms
             {
                 try
                 {
-                    base64 = System.Drawing.Helpers.ToBase64(Image);
+                    base64 = Platform.Support.Drawing.ImageHelper.ToBase64(Image);
                     numericUpDownColumns_ValueChanged(sender, e);
                 }
                 catch (Exception ex)
@@ -119,7 +120,7 @@ namespace Toolkit.Forms
                 StringBuilder sb = new StringBuilder();
                 int c = (int)numericUpDownColumns.Value;
 
-                foreach (var item in System.Helpers.SpliceText(base64, c))
+                foreach (var item in base64.SpliceText(c))
                 {
                     sb.AppendLine(item);
                 }

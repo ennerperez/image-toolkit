@@ -39,25 +39,26 @@
     <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Magick.NET-Q16-AnyCPU, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q16-AnyCPU.7.0.4.100\lib\net40-client\Magick.NET-Q16-AnyCPU.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Pictograms, Version=1.1.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Drawing.Pictograms.1.1.14.0\lib\net40\System.Drawing.Pictograms.dll</HintPath>
+    <Reference Include="System.Drawing.Pictograms, Version=1.1.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Pictograms.1.1.15.0\lib\net40\System.Drawing.Pictograms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Forms.Pictograms, Version=1.1.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Windows.Forms.Pictograms.1.1.14.0\lib\net40\System.Windows.Forms.Pictograms.dll</HintPath>
+    <Reference Include="System.Windows.Forms.Pictograms, Version=1.1.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Forms.Pictograms.1.1.15.0\lib\net40\System.Windows.Forms.Pictograms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\BufferedPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\ImageCropControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +76,12 @@
     </Compile>
     <Compile Include="Forms\FormB64Editor.Designer.cs">
       <DependentUpon>FormB64Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormChroma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChroma.Designer.cs">
+      <DependentUpon>FormChroma.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormCrop.cs">
       <SubType>Form</SubType>
@@ -95,9 +102,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Structures\ApplicationInfo.cs" />
-    <Compile Include="Structures\Helpers.cs" />
-    <Compile Include="Structures\MathHelper.cs" />
+    <Compile Include="References.cs" />
+    <Compile Include="References\GeometricHelper.cs" />
+    <Compile Include="References\ImageExtensions.cs" />
+    <Compile Include="References\ImageHelper.cs" />
+    <Compile Include="References\MathHelper.cs" />
+    <Compile Include="References\NativeMethods.cs" />
+    <Compile Include="References\StringExtensions.cs" />
+    <Compile Include="References\StringHelper.cs" />
     <EmbeddedResource Include="Forms\FormAbout.es.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormB64Editor.resx">
       <DependentUpon>FormB64Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormChroma.resx">
+      <DependentUpon>FormChroma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCrop.resx">
       <DependentUpon>FormCrop.cs</DependentUpon>
