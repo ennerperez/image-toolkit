@@ -33,19 +33,11 @@ namespace Toolkit.Forms
 
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-            // openFileDialogImage
+            // openFileDialogMain
             openFileDialogMain.DefaultExt = Program.imageFiles[0];
-            openFileDialogMain.Filter = string.Format(openFileDialogMain.Filter,
-                string.Join(", *", Program.imageFiles.ToArray()),
-                string.Join("; *", Program.imageFiles.ToArray()),
-                string.Join(", *", Program.textFiles.ToArray()),
-                string.Join("; *", Program.textFiles.ToArray()));
 
-            // saveFileDialogImage
+            // saveFileDialogMain
             saveFileDialogMain.DefaultExt = Program.imageFiles[0];
-            saveFileDialogMain.Filter = string.Format(saveFileDialogMain.Filter,
-                string.Join(", *", Program.imageFiles.ToArray()),
-                string.Join("; *", Program.imageFiles.ToArray()));
 
             // Icons
             toolStripButtonOpen.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
@@ -80,7 +72,7 @@ namespace Toolkit.Forms
             if (ImageChanged != null)
                 ImageChanged(this, e);
 
-            labelDragDropPreview.Visible = Image == null;
+            labelPreview.Visible = Image == null;
             toolStripButtonToB64.Enabled = Image != null;
             //toolStripButtonFromB64.Enabled = Image != null;
             toolStripButtonCrop.Enabled = Image != null;

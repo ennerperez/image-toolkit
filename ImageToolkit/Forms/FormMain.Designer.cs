@@ -51,23 +51,23 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.bufferedPanelPreview = new System.Windows.Forms.BufferedPanel();
-            this.labelDragDropPreview = new System.Windows.Forms.Label();
+            this.labelPreview = new System.Windows.Forms.Label();
             this.contextMenuStripImage.SuspendLayout();
             this.toolStripMenu.SuspendLayout();
             this.bufferedPanelPreview.SuspendLayout();
             this.SuspendLayout();
             // 
-            // openFileDialogImage
+            // openFileDialogMain
             // 
             this.openFileDialogMain.DefaultExt = "jpg";
-            resources.ApplyResources(this.openFileDialogMain, "openFileDialogImage");
+            resources.ApplyResources(this.openFileDialogMain, "openFileDialogMain");
             this.openFileDialogMain.Tag = "";
             this.openFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogMain_FileOk);
             // 
-            // saveFileDialogImage
+            // saveFileDialogMain
             // 
             this.saveFileDialogMain.DefaultExt = "jpg";
-            resources.ApplyResources(this.saveFileDialogMain, "saveFileDialogImage");
+            resources.ApplyResources(this.saveFileDialogMain, "saveFileDialogMain");
             this.saveFileDialogMain.Tag = "";
             this.saveFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMain_FileOk);
             // 
@@ -219,21 +219,21 @@
             this.bufferedPanelPreview.AllowDrop = true;
             resources.ApplyResources(this.bufferedPanelPreview, "bufferedPanelPreview");
             this.bufferedPanelPreview.ContextMenuStrip = this.contextMenuStripImage;
-            this.bufferedPanelPreview.Controls.Add(this.labelDragDropPreview);
+            this.bufferedPanelPreview.Controls.Add(this.labelPreview);
             this.bufferedPanelPreview.Name = "bufferedPanelPreview";
             this.bufferedPanelPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDrop);
             this.bufferedPanelPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);
             // 
-            // labelDragDropPreview
+            // labelPreview
             // 
-            this.labelDragDropPreview.AllowDrop = true;
-            this.labelDragDropPreview.BackColor = System.Drawing.Color.Transparent;
-            this.labelDragDropPreview.ContextMenuStrip = this.contextMenuStripImage;
-            resources.ApplyResources(this.labelDragDropPreview, "labelDragDropPreview");
-            this.labelDragDropPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelDragDropPreview.Name = "labelDragDropPreview";
-            this.labelDragDropPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDrop);
-            this.labelDragDropPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);
+            this.labelPreview.AllowDrop = true;
+            this.labelPreview.BackColor = System.Drawing.Color.Transparent;
+            this.labelPreview.ContextMenuStrip = this.contextMenuStripImage;
+            resources.ApplyResources(this.labelPreview, "labelPreview");
+            this.labelPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelPreview.Name = "labelPreview";
+            this.labelPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDrop);
+            this.labelPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);
             // 
             // FormMain
             // 
@@ -253,7 +253,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label labelDragDropPreview;
+        private System.Windows.Forms.Label labelPreview;
         private System.Windows.Forms.BufferedPanel bufferedPanelPreview;
         private System.Windows.Forms.OpenFileDialog openFileDialogMain;
         private System.Windows.Forms.ToolTip toolTipMain;

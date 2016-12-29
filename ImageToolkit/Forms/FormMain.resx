@@ -117,29 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="openFileDialogImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openFileDialogMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="openFileDialogImage.Filter" xml:space="preserve">
-    <value>Valid files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.txt;*.bin;*.b64|Image files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;|Text files|*.txt;*.bin;*.b64|All files|*.*</value>
+  <data name="openFileDialogMain.Filter" xml:space="preserve">
+    <value>Valid files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.txt;*.bin;*.b64|Image files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif|Text files|*.txt;*.bin;*.b64|All files|*.*</value>
   </data>
-  <data name="openFileDialogImage.Title" xml:space="preserve">
+  <data name="openFileDialogMain.Title" xml:space="preserve">
     <value>Open...</value>
   </data>
   <metadata name="toolTipMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 17</value>
+    <value>335, 17</value>
   </metadata>
-  <metadata name="saveFileDialogImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>301, 17</value>
+  <metadata name="saveFileDialogMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>178, 17</value>
   </metadata>
-  <data name="saveFileDialogImage.Filter" xml:space="preserve">
-    <value>Valid files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.txt;*.bin;*.b64|Image files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;|Text files|*.txt;*.bin;*.b64|All files|*.*</value>
+  <data name="saveFileDialogMain.Filter" xml:space="preserve">
+    <value>Valid files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.txt;*.bin;*.b64|Image files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif|Text files|*.txt;*.bin;*.b64|All files|*.*</value>
   </data>
-  <data name="saveFileDialogImage.Title" xml:space="preserve">
+  <data name="saveFileDialogMain.Title" xml:space="preserve">
     <value>Save...</value>
   </data>
   <metadata name="contextMenuStripImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>464, 17</value>
+    <value>452, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -164,7 +164,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="toolStripMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>647, 17</value>
+    <value>635, 17</value>
   </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStripMenu.AutoSize" type="System.Boolean, mscorlib">
@@ -467,7 +467,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="toolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 561</value>
+    <value>48, 553</value>
   </data>
   <data name="toolStripMenu.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -487,38 +487,38 @@
   <data name="bufferedPanelPreview.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="labelDragDropPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="labelPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="labelDragDropPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelDragDropPreview.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 9</value>
   </data>
-  <data name="labelDragDropPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>566, 543</value>
+  <data name="labelPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>558, 535</value>
   </data>
-  <data name="labelDragDropPreview.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="labelDragDropPreview.Text" xml:space="preserve">
+  <data name="labelPreview.Text" xml:space="preserve">
     <value>Drag &amp;&amp; Drop
 Any image or text here</value>
   </data>
-  <data name="labelDragDropPreview.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelPreview.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.Name" xml:space="preserve">
-    <value>labelDragDropPreview</value>
+  <data name="&gt;&gt;labelPreview.Name" xml:space="preserve">
+    <value>labelPreview</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelPreview.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelPreview.Parent" xml:space="preserve">
     <value>bufferedPanelPreview</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="bufferedPanelPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -531,7 +531,7 @@ Any image or text here</value>
     <value>9, 9, 9, 9</value>
   </data>
   <data name="bufferedPanelPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 561</value>
+    <value>576, 553</value>
   </data>
   <data name="bufferedPanelPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -555,7 +555,7 @@ Any image or text here</value>
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>632, 561</value>
+    <value>624, 553</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -564,15 +564,15 @@ Any image or text here</value>
     <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>528, 480</value>
+    <value>640, 480</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Image Toolkit</value>
   </data>
-  <data name="&gt;&gt;openFileDialogImage.Name" xml:space="preserve">
-    <value>openFileDialogImage</value>
+  <data name="&gt;&gt;openFileDialogMain.Name" xml:space="preserve">
+    <value>openFileDialogMain</value>
   </data>
-  <data name="&gt;&gt;openFileDialogImage.Type" xml:space="preserve">
+  <data name="&gt;&gt;openFileDialogMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolTipMain.Name" xml:space="preserve">
@@ -581,10 +581,10 @@ Any image or text here</value>
   <data name="&gt;&gt;toolTipMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveFileDialogImage.Name" xml:space="preserve">
-    <value>saveFileDialogImage</value>
+  <data name="&gt;&gt;saveFileDialogMain.Name" xml:space="preserve">
+    <value>saveFileDialogMain</value>
   </data>
-  <data name="&gt;&gt;saveFileDialogImage.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveFileDialogMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;copyToolStripMenuItem.Name" xml:space="preserve">
