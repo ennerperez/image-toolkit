@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.4] - [UNRELEASED]
 ### Changed
 - Minors bugs fixes
+- Spanish translation
 
 ## [1.0.3] - [2016-12-28]
 ### Changed

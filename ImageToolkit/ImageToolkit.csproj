@@ -116,14 +116,26 @@
     <EmbeddedResource Include="Forms\FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormB64Editor.es.resx">
+      <DependentUpon>FormB64Editor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormB64Editor.resx">
       <DependentUpon>FormB64Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormChroma.es.resx">
+      <DependentUpon>FormChroma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormChroma.resx">
       <DependentUpon>FormChroma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCrop.es.resx">
+      <DependentUpon>FormCrop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCrop.resx">
       <DependentUpon>FormCrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMain.es.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

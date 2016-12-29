@@ -31,18 +31,15 @@ namespace Toolkit.Forms
 
             // saveFileDialogB64
             saveFileDialogB64.DefaultExt = Program.textFiles[0];
-            saveFileDialogB64.Filter = string.Format(saveFileDialogB64.Filter,
-                string.Join(", *", Program.textFiles.ToArray()),
-                string.Join("; *", Program.textFiles.ToArray()));
 
             OpenMode = mode;
             switch (OpenMode)
             {
                 case Mode.Open:
-                    buttonAction.Text = "&Process";
+                    buttonAction.Text = "&Process"; //TODO: Translate
                     break;
                 case Mode.Save:
-                    buttonAction.Text = "&Save...";
+                    buttonAction.Text = "&Save..."; //TODO: Translate
 
                     break;
                 default:
