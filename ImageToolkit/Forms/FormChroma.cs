@@ -1,10 +1,6 @@
 ﻿using ImageMagick;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Toolkit.Forms
@@ -67,8 +63,7 @@ namespace Toolkit.Forms
             var image = new MagickImage(new Bitmap(this.Image));
             image.ColorFuzz = new Percentage((Double)numericUpDownPercentage.Value);
             image.TransparentChroma(new MagickColor(buttonKey.BackColor), new MagickColor(buttonColor.BackColor));
-            pictureBoxImage .Image = image.ToBitmap( System.Drawing.Imaging.ImageFormat.Png);
-            //image.Write("test_result.jpg");
+            pictureBoxImage.Image = image.ToBitmap( System.Drawing.Imaging.ImageFormat.Png);
         }
     }
 }

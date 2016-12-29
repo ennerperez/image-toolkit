@@ -1,7 +1,6 @@
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 
-using Platform.Support.Maths;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,11 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Media;
-using System.Text;
 using System.Windows.Forms;
-//using OpenLiveWriter.CoreServices;
-//using OpenLiveWriter.Localization;
 
 namespace OpenLiveWriter.Controls
 {
@@ -38,7 +33,6 @@ namespace OpenLiveWriter.Controls
             SetStyle(ControlStyles.ResizeRedraw, true);
             InitializeComponent();
 
-            //AccessibleName = Res.Get(StringId.CropPane);
             AccessibleRole = AccessibleRole.Pane;
             TabStop = true;
         }
@@ -82,7 +76,7 @@ namespace OpenLiveWriter.Controls
             Bitmap newBitmap = new Bitmap(bitmap, crop.Real.Size.Width, crop.Real.Size.Height);
             using (Graphics g = Graphics.FromImage(newBitmap))
             {
-                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                g.CompositingMode = CompositingMode.SourceCopy;
                 g.DrawImage(bitmap, new Rectangle(0, 0, newBitmap.Width, newBitmap.Height), crop.Real, GraphicsUnit.Pixel);
             }
             Bitmap = newBitmap;
@@ -228,9 +222,7 @@ namespace OpenLiveWriter.Controls
                 InvalidateForRectChange(originalRect, crop.Virtual);
             }
             else if (e.Button == MouseButtons.None)
-            {
                 Cursor = ChooseCursor(crop.Virtual, e.Location);
-            }
         }
 
         private void InvalidateForRectChange(Rectangle oldRect, Rectangle newRect)
@@ -364,11 +356,6 @@ namespace OpenLiveWriter.Controls
                 fireCropChangedOnKeyUp = true;
                 InvalidateForRectChange(orig, result);
             }
-            else
-            {
-                // annoying
-                // SystemSounds.Beep.Play();
-            }
 
             return true;
         }
@@ -445,9 +432,7 @@ namespace OpenLiveWriter.Controls
             cropDrawRect.Height -= 1;
             using (Brush b = new SolidBrush(Color.FromArgb(200, Color.White)))
             using (Pen p = new Pen(b, 1))
-            {
                 e.Graphics.DrawRectangle(p, cropDrawRect);
-            }
 
             if (gridLines)
             {
@@ -475,13 +460,11 @@ namespace OpenLiveWriter.Controls
             BoundsWithHandles boundsWithHandles = new BoundsWithHandles(cropStrategy.AspectRatio == null ? true : false);
             boundsWithHandles.Bounds = cropDrawRect;
             using (Pen p = new Pen(SystemColors.ControlDarkDark, 1f))
-            {
                 foreach (Rectangle rect in boundsWithHandles.GetHandles())
                 {
                     e.Graphics.FillRectangle(SystemBrushes.Window, rect);
                     e.Graphics.DrawRectangle(p, rect);
                 }
-            }
         }
 
         private static void CalculateGridlines(Rectangle cropDrawRect, out int x1, out int x2, out int y1, out int y2)
@@ -533,9 +516,7 @@ namespace OpenLiveWriter.Controls
                 Reset();
                 Bitmap newBitmap = new Bitmap(original, size);
                 using (Graphics g = Graphics.FromImage(newBitmap))
-                {
                     g.DrawImage(original, 0, 0, newBitmap.Width, newBitmap.Height);
-                }
                 resized = newBitmap;
                 currentSize = size;
             }
@@ -591,13 +572,9 @@ namespace OpenLiveWriter.Controls
                 Rectangle newRect = initialBounds;
 
                 if (anchor == ANCHOR_ALL) // move
-                {
                     newRect = DoMove(newLoc);
-                }
                 else // resize
-                {
                     newRect = DoResize(newLoc);
-                }
 
                 if (container != null)
                     newRect.Intersect(container.Value);
@@ -763,13 +740,9 @@ namespace OpenLiveWriter.Controls
                 Rectangle result = base.AdjustRectangle(cont, rect, xOffset, yOffset, xGrow, yGrow);
 
                 if (xGrow != 0)
-                {
                     result.Height = Math.Max(MIN_HEIGHT, Round(result.Width / aspectRatio));
-                }
                 else if (yGrow != 0)
-                {
                     result.Width = Math.Max(MIN_WIDTH, Round(result.Height * aspectRatio));
-                }
 
                 // too far--revert!
                 if (result.Bottom > cont.Bottom || result.Right > cont.Right)
@@ -800,13 +773,9 @@ namespace OpenLiveWriter.Controls
             {
                 AnchorStyles hitTest = base.HitTest(sizeRect, point);
                 if (AnchorStyles.None == (hitTest & (AnchorStyles.Left | AnchorStyles.Right)))
-                {
                     return AnchorStyles.None;
-                }
                 if (AnchorStyles.None == (hitTest & (AnchorStyles.Top | AnchorStyles.Bottom)))
-                {
                     return AnchorStyles.None;
-                }
                 return hitTest;
             }
 

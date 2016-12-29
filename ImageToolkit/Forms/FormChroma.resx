@@ -117,99 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 9</value>
-  </data>
-  <data name="buttonColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonColor.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;buttonColor.Name" xml:space="preserve">
-    <value>buttonColor</value>
-  </data>
-  <data name="&gt;&gt;buttonColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonColor.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonColor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonApply.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 9</value>
-  </data>
-  <data name="buttonApply.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="buttonApply.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="buttonApply.Text" xml:space="preserve">
-    <value>&amp;Apply</value>
-  </data>
-  <data name="&gt;&gt;buttonApply.Name" xml:space="preserve">
-    <value>buttonApply</value>
-  </data>
-  <data name="&gt;&gt;buttonApply.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonApply.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonApply.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 9</value>
-  </data>
-  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="buttonOk.Text" xml:space="preserve">
-    <value>&amp;Ok</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
-    <value>buttonOk</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="labelKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="labelKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 13</value>
+    <value>3, 0</value>
   </data>
   <data name="labelKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
+    <value>28, 27</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -226,19 +141,19 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelKey.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelKey.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="buttonKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 9</value>
+    <value>37, 3</value>
   </data>
   <data name="buttonKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 21</value>
   </data>
   <data name="buttonKey.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;buttonKey.Name" xml:space="preserve">
     <value>buttonKey</value>
@@ -247,22 +162,19 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonKey.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;buttonKey.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="labelPercentage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>1</value>
   </data>
   <data name="labelPercentage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 13</value>
+    <value>118, 0</value>
   </data>
   <data name="labelPercentage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>65, 27</value>
   </data>
   <data name="labelPercentage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="labelPercentage.Text" xml:space="preserve">
     <value>&amp;Percentage:</value>
@@ -277,22 +189,40 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelPercentage.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelPercentage.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
-  <data name="labelColor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="numericUpDownPercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 3</value>
+  </data>
+  <data name="numericUpDownPercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="numericUpDownPercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPercentage.Name" xml:space="preserve">
+    <value>numericUpDownPercentage</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPercentage.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownPercentage.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="labelColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 13</value>
+    <value>268, 0</value>
   </data>
   <data name="labelColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
+    <value>34, 27</value>
   </data>
   <data name="labelColor.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="labelColor.Text" xml:space="preserve">
     <value>&amp;Color:</value>
@@ -307,31 +237,116 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelColor.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelColor.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
-  <data name="numericUpDownPercentage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 10</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="numericUpDownPercentage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
+  <data name="buttonColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>308, 3</value>
   </data>
-  <data name="numericUpDownPercentage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="buttonColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
   </data>
-  <data name="&gt;&gt;numericUpDownPercentage.Name" xml:space="preserve">
-    <value>numericUpDownPercentage</value>
+  <data name="buttonColor.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;numericUpDownPercentage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonColor.Name" xml:space="preserve">
+    <value>buttonColor</value>
   </data>
-  <data name="&gt;&gt;numericUpDownPercentage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonColor.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;buttonColor.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 27</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;numericUpDownPercentage.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonApply.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 6</value>
+  </data>
+  <data name="buttonApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="buttonApply.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonApply.Text" xml:space="preserve">
+    <value>&amp;Apply</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.Name" xml:space="preserve">
+    <value>buttonApply</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonApply.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonOk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 6</value>
+  </data>
+  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonOk.Text" xml:space="preserve">
+    <value>&amp;Ok</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
+    <value>buttonOk</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -346,7 +361,7 @@
     <value>624, 42</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -401,6 +416,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>624, 441</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 480</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.openFileDialogImage = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogMain = new System.Windows.Forms.OpenFileDialog();
             this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
-            this.saveFileDialogImage = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.contextMenuStripImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,19 +59,17 @@
             // 
             // openFileDialogImage
             // 
-            this.openFileDialogImage.DefaultExt = "jpg";
-            resources.ApplyResources(this.openFileDialogImage, "openFileDialogImage");
-            this.openFileDialogImage.Tag = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" +
-    " *.png |Text files (*.txt, *.bin, *.b64) | *.txt; *.bin; *.b64";
-            this.openFileDialogImage.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogImage_FileOk);
+            this.openFileDialogMain.DefaultExt = "jpg";
+            resources.ApplyResources(this.openFileDialogMain, "openFileDialogImage");
+            this.openFileDialogMain.Tag = "";
+            this.openFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogMain_FileOk);
             // 
             // saveFileDialogImage
             // 
-            this.saveFileDialogImage.DefaultExt = "jpg";
-            resources.ApplyResources(this.saveFileDialogImage, "saveFileDialogImage");
-            this.saveFileDialogImage.Tag = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" +
-    " *.png |Text files (*.txt, *.bin, *.b64) | *.txt; *.bin; *.b64";
-            this.saveFileDialogImage.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogImage_FileOk);
+            this.saveFileDialogMain.DefaultExt = "jpg";
+            resources.ApplyResources(this.saveFileDialogMain, "saveFileDialogImage");
+            this.saveFileDialogMain.Tag = "";
+            this.saveFileDialogMain.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMain_FileOk);
             // 
             // contextMenuStripImage
             // 
@@ -84,14 +82,14 @@
             // 
             // copyToolStripMenuItem
             // 
-            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
-            resources.ApplyResources(this.pasteToolStripMenuItem, "pasteToolStripMenuItem");
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            resources.ApplyResources(this.pasteToolStripMenuItem, "pasteToolStripMenuItem");
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // toolStripMenu
@@ -223,8 +221,8 @@
             this.bufferedPanelPreview.ContextMenuStrip = this.contextMenuStripImage;
             this.bufferedPanelPreview.Controls.Add(this.labelDragDropPreview);
             this.bufferedPanelPreview.Name = "bufferedPanelPreview";
-            this.bufferedPanelPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragDrop);
-            this.bufferedPanelPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragEnter);
+            this.bufferedPanelPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDrop);
+            this.bufferedPanelPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);
             // 
             // labelDragDropPreview
             // 
@@ -234,8 +232,8 @@
             resources.ApplyResources(this.labelDragDropPreview, "labelDragDropPreview");
             this.labelDragDropPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelDragDropPreview.Name = "labelDragDropPreview";
-            this.labelDragDropPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragDrop);
-            this.labelDragDropPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.bufferedPanelPreview_DragEnter);
+            this.labelDragDropPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDrop);
+            this.labelDragDropPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnter);
             // 
             // FormMain
             // 
@@ -257,9 +255,9 @@
         #endregion
         private System.Windows.Forms.Label labelDragDropPreview;
         private System.Windows.Forms.BufferedPanel bufferedPanelPreview;
-        private System.Windows.Forms.OpenFileDialog openFileDialogImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialogMain;
         private System.Windows.Forms.ToolTip toolTipMain;
-        private System.Windows.Forms.SaveFileDialog saveFileDialogImage;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripImage;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;

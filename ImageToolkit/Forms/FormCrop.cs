@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Toolkit.Forms
@@ -65,14 +61,6 @@ namespace Toolkit.Forms
         {
 
             imageCropControl.CropRectangleChanged -= imageCropControl_CropRectangleChanged;
-
-            //Rectangle cropRectangle = new Rectangle(
-            //    (int)(numericUpDownX.Value),
-            //    (int)(numericUpDownY.Value),
-            //    (int)(numericUpDownWidth.Value),
-            //    (int)(numericUpDownHeight.Value));
-            //imageCropControl.CropRectangle = cropRectangle;
-
             imageCropControl.CropRectangleChanged += imageCropControl_CropRectangleChanged;
 
         }
