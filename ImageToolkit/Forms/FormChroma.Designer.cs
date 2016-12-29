@@ -40,22 +40,19 @@
             this.numericUpDownPercentage = new System.Windows.Forms.NumericUpDown();
             this.colorDialogKey = new System.Windows.Forms.ColorDialog();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.buttonColor);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.buttonApply);
             this.panel1.Controls.Add(this.buttonOk);
-            this.panel1.Controls.Add(this.labelKey);
-            this.panel1.Controls.Add(this.buttonKey);
-            this.panel1.Controls.Add(this.labelPercentage);
-            this.panel1.Controls.Add(this.labelColor);
-            this.panel1.Controls.Add(this.numericUpDownPercentage);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -119,6 +116,17 @@
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.labelKey);
+            this.flowLayoutPanel1.Controls.Add(this.buttonKey);
+            this.flowLayoutPanel1.Controls.Add(this.labelPercentage);
+            this.flowLayoutPanel1.Controls.Add(this.numericUpDownPercentage);
+            this.flowLayoutPanel1.Controls.Add(this.labelColor);
+            this.flowLayoutPanel1.Controls.Add(this.buttonColor);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
             // FormChroma
             // 
             this.AcceptButton = this.buttonOk;
@@ -129,9 +137,9 @@
             this.DoubleBuffered = true;
             this.Name = "FormChroma";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPercentage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -148,5 +156,6 @@
         private System.Windows.Forms.Button buttonColor;
         private System.Windows.Forms.Button buttonApply;
         private System.Windows.Forms.PictureBox pictureBoxImage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

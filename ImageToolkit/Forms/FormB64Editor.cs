@@ -1,9 +1,9 @@
 ﻿using Platform.Support;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -21,8 +21,8 @@ namespace Toolkit.Forms
         private string base64;
 
         public Image Image { get; set; }
+                public Mode OpenMode { get; set; }
 
-        public Mode OpenMode { get; set; }
         public FormB64Editor(Mode mode = Mode.Save)
         {
             InitializeComponent();
@@ -31,18 +31,15 @@ namespace Toolkit.Forms
 
             // saveFileDialogB64
             saveFileDialogB64.DefaultExt = Program.textFiles[0];
-            saveFileDialogB64.Filter = string.Format(saveFileDialogB64.Filter,
-                string.Join(", *", Program.textFiles.ToArray()),
-                string.Join("; *", Program.textFiles.ToArray()));
 
             OpenMode = mode;
             switch (OpenMode)
             {
                 case Mode.Open:
-                    buttonAction.Text = "&Process";
+                    buttonAction.Text = "&Process"; //TODO: Translate
                     break;
                 case Mode.Save:
-                    buttonAction.Text = "&Save...";
+                    buttonAction.Text = "&Save..."; //TODO: Translate
 
                     break;
                 default:
@@ -59,7 +56,7 @@ namespace Toolkit.Forms
                     {
                         if (!string.IsNullOrEmpty(textBoxB64.Text))
                         {
-                            Image = Platform.Support.Drawing.ImageHelper.FromBase64(textBoxB64.Text.Replace("\r\n",""));
+                            Image = Platform.Support.Drawing.ImageHelper.FromBase64(textBoxB64.Text.Replace("\r\n", ""));
                             DialogResult = DialogResult.OK;
                             if (Process != null)
                                 Process.Invoke(this, new EventArgs());
@@ -83,11 +80,12 @@ namespace Toolkit.Forms
         {
             try
             {
-                System.IO.File.WriteAllText(saveFileDialogB64.FileName, textBoxB64.Text);
+                File.WriteAllText(saveFileDialogB64.FileName, textBoxB64.Text);
                 DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.Message);
                 MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -99,7 +97,6 @@ namespace Toolkit.Forms
             labelColumns.Visible = numericUpDownColumns.Visible;
 
             if (OpenMode != Mode.Open)
-            {
                 try
                 {
                     base64 = Platform.Support.Drawing.ImageHelper.ToBase64(Image);
@@ -107,10 +104,10 @@ namespace Toolkit.Forms
                 }
                 catch (Exception ex)
                 {
+                    Debug.WriteLine(ex.Message);
                     MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                 }
-            }
         }
 
         private void numericUpDownColumns_ValueChanged(object sender, EventArgs e)
@@ -121,28 +118,12 @@ namespace Toolkit.Forms
                 int c = (int)numericUpDownColumns.Value;
 
                 foreach (var item in base64.SpliceText(c))
-                {
                     sb.AppendLine(item);
-                }
-
-                //for (int i = 0; i < base64.Length; i = i + 1 +c)
-                //{
-                //    if (base64.Substring(i).Length >= c)
-                //    {
-                //        sb.AppendLine(base64.Substring(i, c));
-                //    }
-                //    else
-                //    {
-                //        sb.AppendLine(base64.Substring(i));
-                //    }
-                //}
 
                 textBoxB64.Text = sb.ToString();
             }
             else
-            {
                 textBoxB64.Text = base64;
-            }
 
         }
 
@@ -150,7 +131,6 @@ namespace Toolkit.Forms
         {
             Close();
         }
-
 
         public event EventHandler Process;
 

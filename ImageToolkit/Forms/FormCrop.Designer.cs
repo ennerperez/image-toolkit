@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrop));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelManual = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.buttonCrop = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
             this.labelX = new System.Windows.Forms.Label();
@@ -42,43 +40,24 @@
             this.numericUpDownY = new System.Windows.Forms.NumericUpDown();
             this.labelY = new System.Windows.Forms.Label();
             this.labelWidth = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.imageCropControl = new OpenLiveWriter.Controls.ImageCropControl();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanelManual.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.tableLayoutPanelManual);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.buttonCrop);
+            this.panel1.Controls.Add(this.buttonOk);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // tableLayoutPanelManual
-            // 
-            resources.ApplyResources(this.tableLayoutPanelManual, "tableLayoutPanelManual");
-            this.tableLayoutPanelManual.Controls.Add(this.panel2, 8, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.labelX, 0, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.numericUpDownHeight, 7, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.numericUpDownX, 1, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.labelHeight, 6, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.numericUpDownWidth, 5, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.numericUpDownY, 3, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.labelY, 2, 0);
-            this.tableLayoutPanelManual.Controls.Add(this.labelWidth, 4, 0);
-            this.tableLayoutPanelManual.Name = "tableLayoutPanelManual";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.buttonCrop);
-            this.panel2.Controls.Add(this.buttonOk);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
             // 
             // buttonCrop
             // 
@@ -138,14 +117,29 @@
             resources.ApplyResources(this.labelWidth, "labelWidth");
             this.labelWidth.Name = "labelWidth";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.labelX);
+            this.flowLayoutPanel1.Controls.Add(this.numericUpDownX);
+            this.flowLayoutPanel1.Controls.Add(this.labelY);
+            this.flowLayoutPanel1.Controls.Add(this.numericUpDownY);
+            this.flowLayoutPanel1.Controls.Add(this.labelWidth);
+            this.flowLayoutPanel1.Controls.Add(this.numericUpDownWidth);
+            this.flowLayoutPanel1.Controls.Add(this.labelHeight);
+            this.flowLayoutPanel1.Controls.Add(this.numericUpDownHeight);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
             // imageCropControl
             // 
             this.imageCropControl.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            resources.ApplyResources(this.imageCropControl, "imageCropControl");
             this.imageCropControl.AspectRatio = null;
             this.imageCropControl.Bitmap = null;
-            resources.ApplyResources(this.imageCropControl, "imageCropControl");
+            this.imageCropControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imageCropControl.GridLines = false;
             this.imageCropControl.Name = "imageCropControl";
+            this.imageCropControl.TabStop = false;
             this.imageCropControl.CropRectangleChanged += new System.EventHandler(this.imageCropControl_CropRectangleChanged);
             // 
             // FormCrop
@@ -153,17 +147,16 @@
             this.AcceptButton = this.buttonOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.imageCropControl);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.imageCropControl);
             this.DoubleBuffered = true;
             this.Name = "FormCrop";
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanelManual.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -172,7 +165,6 @@
 
         private OpenLiveWriter.Controls.ImageCropControl imageCropControl;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelManual;
         private System.Windows.Forms.Button buttonCrop;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.NumericUpDown numericUpDownHeight;
@@ -182,7 +174,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownY;
         private System.Windows.Forms.Label labelY;
         private System.Windows.Forms.Label labelWidth;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

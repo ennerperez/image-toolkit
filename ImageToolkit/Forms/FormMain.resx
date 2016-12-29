@@ -117,66 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="openFileDialogImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openFileDialogMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="openFileDialogImage.Filter" xml:space="preserve">
-    <value>Image files (*{0}) | *{1} |Text files (*{2}) | *{3}</value>
+  <data name="openFileDialogMain.Filter" xml:space="preserve">
+    <value>Valid files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.txt;*.bin;*.b64|Image files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif|Text files|*.txt;*.bin;*.b64|All files|*.*</value>
   </data>
-  <data name="openFileDialogImage.Title" xml:space="preserve">
+  <data name="openFileDialogMain.Title" xml:space="preserve">
     <value>Open...</value>
   </data>
   <metadata name="toolTipMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 17</value>
+    <value>335, 17</value>
   </metadata>
-  <metadata name="saveFileDialogImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>301, 17</value>
+  <metadata name="saveFileDialogMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>178, 17</value>
   </metadata>
-  <data name="saveFileDialogImage.Filter" xml:space="preserve">
-    <value>Image files (*{0}) | *{1} </value>
+  <data name="saveFileDialogMain.Filter" xml:space="preserve">
+    <value>Valid files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif;*.txt;*.bin;*.b64|Image files|*.bmp;*.jpg;*.jpeg;*.jpe;*.jfif;*.png;*.gif|Text files|*.txt;*.bin;*.b64|All files|*.*</value>
   </data>
-  <data name="saveFileDialogImage.Title" xml:space="preserve">
+  <data name="saveFileDialogMain.Title" xml:space="preserve">
     <value>Save...</value>
   </data>
   <metadata name="contextMenuStripImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>464, 17</value>
+    <value>452, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="copyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGqSURBVDhPhZJLS0JRFIXvpGmUwwit6DHpYfm7ggZR
-        g+hlRNrvCBokZvhKrVFBTcIiTA0NIvWaWj57UbDb63jvQetaCxbnoec7e92zlYmtUHl4PUCWVT+ZV3zC
-        llUfDa35aWwjGJvcCikzzohi2za2gsOddJoqAbQrIAaHBQA3QwcJVdgTV8W6a84lxhOGjNoDO1OOkGJ1
-        hIWnnWEJVFAydJQu0jE7kiqK9exeVEL6l700yJEG+DItmkuPJgFnD090zsZ4X3kVe7p6FzzarKnWaBIQ
-        zVfpUnNUrdBFjs0j1D3vpqO7ZmV6VYCgEglIlurCt9oIJ9gQAGeZspi3RkMcCcjW3inHVutNY449CIDr
-        QpUy1Tex1mXm55YAVyxL+ze5NmMPAuCOv8sVx2uNhrPyGd3aIU+8acyxBwGgvrxT6rnRFk0A/mokXT38
-        Co3PL3psfLRFE4DxzWANELwxqtFbum/JS6ZFD5n4MDcNHaYKdMBN1hpNAFhWtu2n8YWhcLogDnuTeQnQ
-        o+GyX70No1VH7P9HQ+WGAPS5UTTd2MNv+A9X21GG0dqtWL8BXD66778OdKwAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Copy</value>
-  </data>
-  <data name="pasteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKQSURBVDhPfZJtSFNRGMfPlz63zC8RWFkkhEjql6C8
-        alBGWb5UExMkqEgsS3pBfGl3zWy6mSibbG6ESNkgl07T+TKnW+oUTRbhfAkNonSRFmtK+O3fOWdzZGF/
-        +PGc89zn/O6Be0lz6SliKkkmSnUt8fnXSI2mARv88Pl5nz03lZ4kHSUJJKraRWJVdhKvsnHIs5IUy/Mi
-        AQx2aHZhMQTbs/6LomN4WZzc1l18hBxSD28WNN4/jrX3rzChy4axyYSRiekQbM/6mGqG5W4s9lWNkuiq
-        ARJbZSNxG4KndwSse6f4oKleDF3/So0e4WI/wsp6ISnrQ7jMht1iD/bKrThY3m2OUfaSOCoihsIE+D66
-        uGDSkAu3MRdzRikkohNbZXh+BZHyLhOTEMNtAd88vXBpszCmy8G4PgcefSa2Pxjgw+2zXo5lxsv32wrN
-        vDJJFL0Jabgl4Mu4Gc46KYY0lzCizYZbkx4S9C8sw06xzS/zfUGLOyShtwDRFQhYcDbCXnMeg3VZXDRe
-        mwpJUDD6+TvGKKx+8v3ivY1EiJ1UcFOAx1qHPnUmbNUXYX9yAS71aUhkg3zI/fUn3gVxe32YXKLQyhIh
-        Y4IbiXjbokBXZTqsqkz0qDLgqEwJCeZWVjkfgpUxS2HhgnoqGGq6h/bHaehQZqBTmYb+ihPYERQs+tex
-        RPGuBmBr1mMJCPITYdNeQ2t5KuUcLLT2yJMRJjr4kNmziLbppU2wHgsXaKnAopKiRZFKOQuz4gxey5Kw
-        Ux4QtAYPWWYCsDXrsewR6VeovHzUoclLgiYvkZKE+usCjFfjsevREB/6Xw48tILQ7KfE/02k8s1KpIL+
-        uvQt7E1/wnrscHRFt5/ObpkYyj/izZDDvwHVI5rg+4kz3AAAAABJRU5ErkJggg==
-</value>
   </data>
   <data name="pasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 22</value>
@@ -194,7 +164,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="toolStripMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>647, 17</value>
+    <value>635, 17</value>
   </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStripMenu.AutoSize" type="System.Boolean, mscorlib">
@@ -438,9 +408,6 @@
   <data name="toolStripButtonFromB64.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStripButtonFromB64.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripButtonFromB64.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -470,6 +437,17 @@
   <data name="toolStripButtonSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripButtonSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE2SURBVGhD7ZiLDcIwDEQ7QBdgDhZgH0ZhBWZgCbZglf7w
+        NQcCotIUYqcgP8miyuecS2lqqBzHcRxThmGoJbYZoqakDX3fb9q2PUviLFDLzkTXdaeQOh9mJpBkzEhg
+        5pPg9CdMTEgCfGdHsBA2L6aYCRFXNQBUTYiwugGgZkJETQyQLYfnA6JB+w8MNE1zkXfC/pPAXMq8Q9eA
+        AW4gAqJB2wQ3EAHRoG1CeQNyXB5vJw+u2ZxKcQPRAtAWupIoamDHKRHoC0NmKWMAdQyHT8JaZ44yBlJK
+        jFWUElP8vAEyWQqjLwyZpZwB2eEDp0Sgj8PmKHoHRhPycb8TuF6weKBiIPX238GJk3jqvKLzszLxAfwK
+        5GC6/EhZkPWPrVe4QTq7/wiSSOCZyBn6C3ccx3Ecx3HWRlVdAX2dYxItBiKVAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="toolStripButtonSave.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -489,7 +467,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="toolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 561</value>
+    <value>48, 553</value>
   </data>
   <data name="toolStripMenu.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -509,38 +487,38 @@
   <data name="bufferedPanelPreview.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="labelDragDropPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="labelPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="labelDragDropPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelDragDropPreview.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 9</value>
   </data>
-  <data name="labelDragDropPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>566, 543</value>
+  <data name="labelPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>558, 535</value>
   </data>
-  <data name="labelDragDropPreview.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="labelDragDropPreview.Text" xml:space="preserve">
+  <data name="labelPreview.Text" xml:space="preserve">
     <value>Drag &amp;&amp; Drop
-Any image or text based here</value>
+Any image or text here</value>
   </data>
-  <data name="labelDragDropPreview.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelPreview.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.Name" xml:space="preserve">
-    <value>labelDragDropPreview</value>
+  <data name="&gt;&gt;labelPreview.Name" xml:space="preserve">
+    <value>labelPreview</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelPreview.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelPreview.Parent" xml:space="preserve">
     <value>bufferedPanelPreview</value>
   </data>
-  <data name="&gt;&gt;labelDragDropPreview.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="bufferedPanelPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -553,7 +531,7 @@ Any image or text based here</value>
     <value>9, 9, 9, 9</value>
   </data>
   <data name="bufferedPanelPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 561</value>
+    <value>576, 553</value>
   </data>
   <data name="bufferedPanelPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -562,7 +540,7 @@ Any image or text based here</value>
     <value>bufferedPanelPreview</value>
   </data>
   <data name="&gt;&gt;bufferedPanelPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BufferedPanel, ImageToolkit, Version=1.0.6206.22693, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.BufferedPanel, ImageToolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;bufferedPanelPreview.Parent" xml:space="preserve">
     <value>$this</value>
@@ -577,21 +555,24 @@ Any image or text based here</value>
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>632, 561</value>
+    <value>624, 553</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>528, 480</value>
+    <value>640, 480</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Image Toolkit</value>
   </data>
-  <data name="&gt;&gt;openFileDialogImage.Name" xml:space="preserve">
-    <value>openFileDialogImage</value>
+  <data name="&gt;&gt;openFileDialogMain.Name" xml:space="preserve">
+    <value>openFileDialogMain</value>
   </data>
-  <data name="&gt;&gt;openFileDialogImage.Type" xml:space="preserve">
+  <data name="&gt;&gt;openFileDialogMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolTipMain.Name" xml:space="preserve">
@@ -600,10 +581,10 @@ Any image or text based here</value>
   <data name="&gt;&gt;toolTipMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveFileDialogImage.Name" xml:space="preserve">
-    <value>saveFileDialogImage</value>
+  <data name="&gt;&gt;saveFileDialogMain.Name" xml:space="preserve">
+    <value>saveFileDialogMain</value>
   </data>
-  <data name="&gt;&gt;saveFileDialogImage.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveFileDialogMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;copyToolStripMenuItem.Name" xml:space="preserve">

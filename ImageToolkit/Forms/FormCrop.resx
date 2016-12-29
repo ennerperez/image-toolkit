@@ -117,102 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tableLayoutPanelManual.ColumnCount" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonCrop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
+  <data name="labelX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonCrop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="buttonCrop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="buttonCrop.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="buttonCrop.Text" xml:space="preserve">
-    <value>&amp;Crop</value>
-  </data>
-  <data name="&gt;&gt;buttonCrop.Name" xml:space="preserve">
-    <value>buttonCrop</value>
-  </data>
-  <data name="&gt;&gt;buttonCrop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCrop.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;buttonCrop.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonOk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="buttonOk.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 0</value>
-  </data>
-  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="buttonOk.Text" xml:space="preserve">
-    <value>&amp;Ok</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
-    <value>buttonOk</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 3</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 21</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="labelX.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="labelX.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
   <data name="labelX.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 27</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelX.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -229,40 +145,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelX.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelX.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="numericUpDownHeight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="numericUpDownHeight.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="numericUpDownHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 3</value>
-  </data>
-  <data name="numericUpDownHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="numericUpDownHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownHeight.Name" xml:space="preserve">
-    <value>numericUpDownHeight</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownHeight.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownHeight.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="numericUpDownX.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>0</value>
   </data>
   <data name="numericUpDownX.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -283,97 +169,13 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numericUpDownX.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;numericUpDownX.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelHeight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="labelHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 0</value>
-  </data>
-  <data name="labelHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 27</value>
-  </data>
-  <data name="labelHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelHeight.Text" xml:space="preserve">
-    <value>&amp;Height:</value>
-  </data>
-  <data name="labelHeight.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;labelHeight.Name" xml:space="preserve">
-    <value>labelHeight</value>
-  </data>
-  <data name="&gt;&gt;labelHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelHeight.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
-  </data>
-  <data name="&gt;&gt;labelHeight.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="numericUpDownWidth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="numericUpDownWidth.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="numericUpDownWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 3</value>
-  </data>
-  <data name="numericUpDownWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="numericUpDownWidth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;numericUpDownWidth.Name" xml:space="preserve">
-    <value>numericUpDownWidth</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownWidth.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownWidth.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="numericUpDownY.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="numericUpDownY.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="numericUpDownY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 3</value>
-  </data>
-  <data name="numericUpDownY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="numericUpDownY.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownY.Name" xml:space="preserve">
-    <value>numericUpDownY</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownY.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
-  </data>
-  <data name="&gt;&gt;numericUpDownY.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="labelY.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="labelY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="labelY.Location" type="System.Drawing.Point, System.Drawing">
     <value>105, 0</value>
@@ -382,7 +184,7 @@
     <value>17, 27</value>
   </data>
   <data name="labelY.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="labelY.Text" xml:space="preserve">
     <value>&amp;Y:</value>
@@ -397,13 +199,37 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelY.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelY.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>2</value>
   </data>
-  <data name="labelWidth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="numericUpDownY.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="numericUpDownY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 3</value>
+  </data>
+  <data name="numericUpDownY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="numericUpDownY.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownY.Name" xml:space="preserve">
+    <value>numericUpDownY</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownY.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownY.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="labelWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>207, 0</value>
@@ -412,7 +238,7 @@
     <value>38, 27</value>
   </data>
   <data name="labelWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="labelWidth.Text" xml:space="preserve">
     <value>&amp;Width:</value>
@@ -427,40 +253,175 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelWidth.Parent" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
+    <value>flowLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;labelWidth.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tableLayoutPanelManual.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanelManual.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="tableLayoutPanelManual.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanelManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>612, 27</value>
-  </data>
-  <data name="tableLayoutPanelManual.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelManual.Name" xml:space="preserve">
-    <value>tableLayoutPanelManual</value>
+  <data name="numericUpDownWidth.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelManual.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="numericUpDownWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 3</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelManual.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="numericUpDownWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelManual.ZOrder" xml:space="preserve">
+  <data name="numericUpDownWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownWidth.Name" xml:space="preserve">
+    <value>numericUpDownWidth</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownWidth.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownWidth.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 0</value>
+  </data>
+  <data name="labelHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 27</value>
+  </data>
+  <data name="labelHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="labelHeight.Text" xml:space="preserve">
+    <value>&amp;Height:</value>
+  </data>
+  <data name="labelHeight.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;labelHeight.Name" xml:space="preserve">
+    <value>labelHeight</value>
+  </data>
+  <data name="&gt;&gt;labelHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelHeight.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelHeight.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="numericUpDownHeight.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="numericUpDownHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 3</value>
+  </data>
+  <data name="numericUpDownHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="numericUpDownHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHeight.Name" xml:space="preserve">
+    <value>numericUpDownHeight</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHeight.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHeight.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="flowLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 27</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanelManual.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel2" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="labelX" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="numericUpDownHeight" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="numericUpDownX" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelHeight" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="numericUpDownWidth" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="numericUpDownY" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelY" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelWidth" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,16,66667,AutoSize,0,Percent,16,66667,AutoSize,0,Percent,16,66667,AutoSize,0,Percent,16,66667,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonCrop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonCrop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonCrop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 6</value>
+  </data>
+  <data name="buttonCrop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="buttonCrop.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonCrop.Text" xml:space="preserve">
+    <value>&amp;Crop</value>
+  </data>
+  <data name="&gt;&gt;buttonCrop.Name" xml:space="preserve">
+    <value>buttonCrop</value>
+  </data>
+  <data name="&gt;&gt;buttonCrop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCrop.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonCrop.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonOk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonOk.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 6</value>
+  </data>
+  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonOk.Text" xml:space="preserve">
+    <value>&amp;Ok</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
+    <value>buttonOk</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -475,7 +436,7 @@
     <value>624, 42</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -487,31 +448,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="imageCropControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="imageCropControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="imageCropControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>12, 12</value>
   </data>
   <data name="imageCropControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 399</value>
+    <value>600, 373</value>
   </data>
   <data name="imageCropControl.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;imageCropControl.Name" xml:space="preserve">
     <value>imageCropControl</value>
   </data>
   <data name="&gt;&gt;imageCropControl.Type" xml:space="preserve">
-    <value>OpenLiveWriter.Controls.ImageCropControl, ImageToolkit, Version=1.0.6206.21642, Culture=neutral, PublicKeyToken=null</value>
+    <value>OpenLiveWriter.Controls.ImageCropControl, ImageToolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;imageCropControl.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imageCropControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -521,6 +482,12 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>624, 441</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 480</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

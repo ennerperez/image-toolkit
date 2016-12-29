@@ -265,7 +265,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="saveFileDialogB64.Filter" xml:space="preserve">
-    <value>Text files ({0}) | {1}</value>
+    <value>Text files|*.txt;*.bin;*.b64|All files|*.*</value>
   </data>
   <data name="saveFileDialogB64.Title" xml:space="preserve">
     <value>Save...</value>
