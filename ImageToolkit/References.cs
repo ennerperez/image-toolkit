@@ -1,7 +1,7 @@
 ﻿// ----------------------------------------
 // References
-// Version 1.0.0
-// Updated 2016-12-28
+// Version 1.0.1
+// Updated 2017-11-28
 // ----------------------------------------
 
 using System.Drawing;
@@ -14,7 +14,6 @@ using System.Reflection;
 
 namespace System.Drawing
 {
-
     /// <summary>
     /// Provides helper methods for imaging
     /// </summary>
@@ -130,30 +129,32 @@ namespace System.Drawing
                 gfx.DrawImage(img, 0, 0);
             }
 
-            bmp.Save(@"..\..\..\.editoricon.png");
-            ConvertToIcon(@"..\..\..\.editoricon.png", @"..\..\App.ico", (img.Width + img.Height) / 2, true);
+            var assemblyName = Assembly.GetEntryAssembly().GetName().Name;
+
+            bmp.Save(@"..\..\.editoricon.png");
+            ConvertToIcon(@"..\..\.editoricon.png", string.Format(@"..\..\{0}\App.ico", assemblyName), (img.Width + img.Height) / 2, true);
 
             return true;
-
         }
     }
-
 }
 
 namespace System.Windows.Forms
 {
-
     internal static partial class FormHelper
     {
         public static void ExtractResources(Image image, string name)
         {
             if (image != null)
             {
-                if (!System.IO.Directory.Exists(@"..\..\Resources\"))
-                    System.IO.Directory.CreateDirectory(@"..\..\Resources\");
-                image.Save(string.Format(@"..\..\Resources\{0}.png", name));
+                var assemblyName = Assembly.GetEntryAssembly().GetName().Name;
+                var dirPath = string.Format(@"..\..\{0}\Resources\", assemblyName);
+                if (!System.IO.Directory.Exists(dirPath))
+                    System.IO.Directory.CreateDirectory(dirPath);
+                image.Save(string.Format(@"..\..\{0}\Resources\{1}.png", assemblyName, name));
             }
         }
+
         public static void ExtractResources(ToolStrip source)
         {
             foreach (var item in source.Items.OfType<ToolStripButton>().Where(i => i.Image != null))
@@ -161,9 +162,7 @@ namespace System.Windows.Forms
             foreach (var item in source.Items.OfType<ToolStripDropDownButton>().Where(i => i.Image != null))
                 ExtractResources(item.Image, item.Name);
         }
-
     }
-
 }
 
 #endif
@@ -223,13 +222,11 @@ namespace System
                 return attributes.Length == 0 ? "" : ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
-
     }
 }
 
 namespace System.Windows.Forms
 {
-
     internal static partial class FormHelper
     {
         public static Rectangle GetWorkingArea()
@@ -260,7 +257,6 @@ namespace System.Windows.Forms
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.ResizeRedraw, true);
         }
 
-        #endregion
+        #endregion Public Constructors
     }
-
 }

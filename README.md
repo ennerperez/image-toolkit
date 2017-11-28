@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/ennerperez/image-toolkit/master/.editoricon.png)
+![logo](.editoricon.png)
 
 # Image Toolkit for Devigners
 
@@ -23,7 +23,6 @@ See the [changelog](CHANGELOG.md) for changes.
 * [Bugs and feature requests](#bugs-and-feature-requests)
 * [Documentation](#documentation)
 * [License](#license)
-
 
 ### What's included
 
