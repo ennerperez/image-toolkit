@@ -26,10 +26,10 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Program.Assembly.Location);
 
             // saveFileDialogB64
-            saveFileDialogB64.DefaultExt = Program.textFiles[0];
+            saveFileDialogB64.DefaultExt = Program.Texts[0];
 
             OpenMode = mode;
             switch (OpenMode)
@@ -48,7 +48,7 @@ namespace Toolkit.Forms
             }
         }
 
-        private void buttonAction_Click(object sender, EventArgs e)
+        private void ButtonAction_Click(object sender, EventArgs e)
         {
             switch (OpenMode)
             {
@@ -79,7 +79,7 @@ namespace Toolkit.Forms
             }
         }
 
-        private void saveFileDialogB64_FileOk(object sender, CancelEventArgs e)
+        private void SaveFileDialogB64_FileOk(object sender, CancelEventArgs e)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace Toolkit.Forms
                 try
                 {
                     base64 = Platform.Support.Drawing.ImageHelper.ToBase64(Image);
-                    numericUpDownColumns_ValueChanged(sender, e);
+                    NumericUpDownColumns_ValueChanged(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -112,7 +112,7 @@ namespace Toolkit.Forms
                 }
         }
 
-        private void numericUpDownColumns_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownColumns_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDownColumns.Value > 0)
             {
@@ -128,7 +128,7 @@ namespace Toolkit.Forms
                 textBoxB64.Text = base64;
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             Close();
         }

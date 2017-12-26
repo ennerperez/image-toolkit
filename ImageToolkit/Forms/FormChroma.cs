@@ -11,7 +11,7 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Program.Assembly.Location);
         }
 
         private Image _Image;
@@ -33,34 +33,35 @@ namespace Toolkit.Forms
 
         private void OnImageChanged(EventArgs e)
         {
-            if (ImageChanged != null)
-                ImageChanged(this, e);
+            ImageChanged?.Invoke(this, e);
 
             pictureBoxImage.Image = new Bitmap(Image);
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void ButtonOk_Click(object sender, EventArgs e)
         {
             Image = pictureBoxImage.Image;
             DialogResult = DialogResult.OK;
         }
 
-        private void buttonKey_Click(object sender, EventArgs e)
+        private void ButtonKey_Click(object sender, EventArgs e)
         {
             if (colorDialogKey.ShowDialog() == DialogResult.OK)
                 buttonKey.BackColor = colorDialogKey.Color;
         }
 
-        private void buttonColor_Click(object sender, EventArgs e)
+        private void ButtonColor_Click(object sender, EventArgs e)
         {
             if (colorDialogKey.ShowDialog() == DialogResult.OK)
                 buttonColor.BackColor = colorDialogKey.Color;
         }
 
-        private void buttonApply_Click(object sender, EventArgs e)
+        private void ButtonApply_Click(object sender, EventArgs e)
         {
-            var image = new MagickImage(new Bitmap(this.Image));
-            image.ColorFuzz = new Percentage((Double)numericUpDownPercentage.Value);
+            var image = new MagickImage(new Bitmap(this.Image))
+            {
+                ColorFuzz = new Percentage((Double)numericUpDownPercentage.Value)
+            };
             image.TransparentChroma(new MagickColor(buttonKey.BackColor), new MagickColor(buttonColor.BackColor));
             pictureBoxImage.Image = image.ToBitmap(System.Drawing.Imaging.ImageFormat.Png);
         }

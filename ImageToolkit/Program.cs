@@ -1,26 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Pictograms;
+using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Toolkit
 {
-    internal static class Program
+    internal static partial class Program
     {
-        internal static List<string> imageFiles = new List<string>(new string[] { ".bmp", ".jpg", ".jpeg", ".jpe", ".jfif", ".png", ".gif" });
-        internal static List<string> textFiles = new List<string>(new string[] { ".txt", ".bin", ".b64" });
+        internal static bool IsNewInstance = false;
+        internal static Mutex Mutex = new Mutex(true, ApplicationInfo.Guid, out IsNewInstance);
+        internal static Assembly Assembly = Assembly.GetExecutingAssembly();
+
+        internal static Dictionary<string, string> CommandArgs => ApplicationInfo.GetCommandLine();
 
         [STAThread]
         private static void Main()
         {
-#if DEBUG
-            ImageHelper.GetEditorIcon(MaterialDesign.GetImage(MaterialDesign.IconType.image, 256, Color.White));
-#endif
+            Initialize();
+
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(UnhandledException);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.FormMain());
+
+            if (IsNewInstance)
+                Application.Run(new Forms.FormMain());
+            else
+                NewInstanceHandler(null, EventArgs.Empty);
         }
+
+        private static void UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+        }
+
+        private static void NewInstanceHandler(object sender, EventArgs e)
+        {
+            NewInstance?.Invoke(sender, e);
+        }
+
+        public static event EventHandler NewInstance;
     }
 }

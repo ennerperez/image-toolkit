@@ -14,7 +14,6 @@ See the [changelog](CHANGELOG.md) for changes.
 
 - [x] Chrome key
 - [ ] Compression
-- [x] Spanish translation
 
 ## Table of contents
 

@@ -37,7 +37,6 @@
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonClose = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAbout = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
@@ -48,8 +47,13 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonToB64 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFromB64 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUpdates = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFile = new System.Windows.Forms.ToolStripDropDownButton();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bufferedPanelPreview = new System.Windows.Forms.BufferedPanel();
             this.labelPreview = new System.Windows.Forms.Label();
             this.contextMenuStripImage.SuspendLayout();
@@ -101,9 +105,9 @@
             this.toolStripMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonOpen,
             this.toolStripButtonClose,
             this.toolStripButtonAbout,
+            this.toolStripButtonFile,
             this.toolStripButtonClear,
             this.toolStripSeparator1,
             this.toolStripButtonChromaKey,
@@ -112,18 +116,9 @@
             this.toolStripSeparator2,
             this.toolStripButtonToB64,
             this.toolStripButtonFromB64,
-            this.toolStripSeparator4,
-            this.toolStripButtonSave});
+            this.toolStripButtonUpdates});
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            // 
-            // toolStripButtonOpen
-            // 
-            resources.ApplyResources(this.toolStripButtonOpen, "toolStripButtonOpen");
-            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonOpen.Margin = new System.Windows.Forms.Padding(0);
-            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
-            this.toolStripButtonOpen.Click += new System.EventHandler(this.ToolStripButtonOpen_Click);
             // 
             // toolStripButtonClose
             // 
@@ -201,18 +196,59 @@
             this.toolStripButtonFromB64.Name = "toolStripButtonFromB64";
             this.toolStripButtonFromB64.Click += new System.EventHandler(this.ToolStripButtonFromB64_Click);
             // 
-            // toolStripSeparator4
+            // toolStripButtonUpdates
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            this.toolStripButtonUpdates.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.toolStripButtonUpdates, "toolStripButtonUpdates");
+            this.toolStripButtonUpdates.Checked = global::Toolkit.Properties.Settings.Default.CheckForUpdates;
+            this.toolStripButtonUpdates.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripButtonUpdates.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUpdates.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonUpdates.Name = "toolStripButtonUpdates";
+            this.toolStripButtonUpdates.Click += new System.EventHandler(this.ToolStripButtonUpdates_Click);
             // 
-            // toolStripButtonSave
+            // toolStripButtonFile
             // 
-            resources.ApplyResources(this.toolStripButtonSave, "toolStripButtonSave");
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Margin = new System.Windows.Forms.Padding(0);
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.ToolStripButtonSave_Click);
+            resources.ApplyResources(this.toolStripButtonFile, "toolStripButtonFile");
+            this.toolStripButtonFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
+            this.toolStripButtonFile.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripButtonFile.Name = "toolStripButtonFile";
+            this.toolStripButtonFile.ShowDropDownArrow = false;
+            // 
+            // newToolStripMenuItem
+            // 
+            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.ToolStripButtonClear_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.ToolStripButtonOpen_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // saveToolStripMenuItem
+            // 
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.ToolStripButtonSave_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.ToolStripButtonSave_Click);
             // 
             // bufferedPanelPreview
             // 
@@ -238,8 +274,8 @@
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
-            this.Load += FormMain_Load;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.bufferedPanelPreview);
             this.Controls.Add(this.toolStripMenu);
             this.DoubleBuffered = true;
@@ -263,7 +299,6 @@
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStripMenu;
-        private System.Windows.Forms.ToolStripButton toolStripButtonOpen;
         private System.Windows.Forms.ToolStripButton toolStripButtonClose;
         private System.Windows.Forms.ToolStripButton toolStripButtonAbout;
         private System.Windows.Forms.ToolStripButton toolStripButtonClear;
@@ -271,11 +306,16 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRestore;
         private System.Windows.Forms.ToolStripButton toolStripButtonFromB64;
         private System.Windows.Forms.ToolStripButton toolStripButtonToB64;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButtonChromaKey;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUpdates;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButtonFile;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
     }
 }
 

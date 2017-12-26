@@ -54,16 +54,14 @@ namespace OpenLiveWriter.Controls
 
         private void OnCropRectangleChanged()
         {
-            if (CropRectangleChanged != null)
-                CropRectangleChanged(this, EventArgs.Empty);
+            CropRectangleChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public event EventHandler AspectRatioChanged;
 
         private void OnAspectRatioChanged()
         {
-            if (AspectRatioChanged != null)
-                AspectRatioChanged(this, EventArgs.Empty);
+            AspectRatioChanged?.Invoke(this, EventArgs.Empty);
         }
 
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -157,12 +155,14 @@ namespace OpenLiveWriter.Controls
                     crbNormal = new CachedResizedBitmap(value, false);
                     crbGrayed = new CachedResizedBitmap(MakeGray(value), true);
 
-                    crop = new DualRects(PointF.Empty, bitmap.Size);
-                    crop.Real = new Rectangle(
+                    crop = new DualRects(PointF.Empty, bitmap.Size)
+                    {
+                        Real = new Rectangle(
                         bitmap.Width / 4,
                         bitmap.Height / 4,
                         Math.Max(1, bitmap.Width / 2),
-                        Math.Max(1, bitmap.Height / 2));
+                        Math.Max(1, bitmap.Height / 2))
+                    };
                     OnCropRectangleChanged();
                 }
                 PerformLayout();
@@ -258,8 +258,7 @@ namespace OpenLiveWriter.Controls
 
         private void InvalidateGridlines(Rectangle rect)
         {
-            int x1, x2, y1, y2;
-            CalculateGridlines(rect, out x1, out x2, out y1, out y2);
+            CalculateGridlines(rect, out int x1, out int x2, out int y1, out int y2);
             using (Region gridRegion = new Region())
             {
                 gridRegion.MakeEmpty();
@@ -412,8 +411,10 @@ namespace OpenLiveWriter.Controls
                 offset.Y = (Height - (bitmap.Height * scale.Height)) / 2;
             }
 
-            crop = new DualRects(offset, scale);
-            crop.Real = realRect;
+            crop = new DualRects(offset, scale)
+            {
+                Real = realRect
+            };
 
             Size virtualBitmapSize = crop.VirtualizeRect(0, 0, bitmap.Width, bitmap.Height).Size;
             crbNormal.Resize(virtualBitmapSize);
@@ -451,8 +452,7 @@ namespace OpenLiveWriter.Controls
 
             if (gridLines)
             {
-                int x1, x2, y1, y2;
-                CalculateGridlines(crop.Virtual, out x1, out x2, out y1, out y2);
+                CalculateGridlines(crop.Virtual, out int x1, out int x2, out int y1, out int y2);
 
                 using (Brush b = new SolidBrush(Color.FromArgb(128, Color.Gray)))
                 using (Pen p = new Pen(b, 1))
@@ -472,8 +472,10 @@ namespace OpenLiveWriter.Controls
                 ControlPaint.DrawFocusRectangle(e.Graphics, focusRect);
             }
 
-            BoundsWithHandles boundsWithHandles = new BoundsWithHandles(cropStrategy.AspectRatio == null ? true : false);
-            boundsWithHandles.Bounds = cropDrawRect;
+            BoundsWithHandles boundsWithHandles = new BoundsWithHandles(cropStrategy.AspectRatio == null ? true : false)
+            {
+                Bounds = cropDrawRect
+            };
             using (Pen p = new Pen(SystemColors.ControlDarkDark, 1f))
                 foreach (Rectangle rect in boundsWithHandles.GetHandles())
                 {
@@ -1022,9 +1024,11 @@ namespace OpenLiveWriter.Controls
 
             public Rectangle[] GetHandles()
             {
-                List<Rectangle> handles = new List<Rectangle>(includeSideHandles ? 8 : 4);
-                // top left
-                handles.Add(MakeRect(bounds.Left, bounds.Top));
+                List<Rectangle> handles = new List<Rectangle>(includeSideHandles ? 8 : 4)
+                {
+                    // top left
+                    MakeRect(bounds.Left, bounds.Top)
+                };
                 if (includeSideHandles)
                     handles.Add(MakeRect((bounds.Left + bounds.Right) / 2, bounds.Top));
                 handles.Add(MakeRect(bounds.Right, bounds.Top));

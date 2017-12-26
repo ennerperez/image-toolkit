@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Pictograms;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
@@ -23,8 +24,11 @@ namespace Toolkit.Forms
             }
             set
             {
-                image = value;
-                OnImageChanged(EventArgs.Empty);
+                if (image != value)
+                {
+                    image = value;
+                    OnImageChanged(EventArgs.Empty);
+                }
             }
         }
 
@@ -32,31 +36,34 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Program.Assembly.Location);
 
             // openFileDialogMain
-            openFileDialogMain.DefaultExt = Program.imageFiles[0];
+            openFileDialogMain.DefaultExt = Program.Formats.FirstOrDefault();
 
             // saveFileDialogMain
-            saveFileDialogMain.DefaultExt = Program.imageFiles[0];
+            saveFileDialogMain.DefaultExt = Program.Formats.FirstOrDefault();
 
             // Icons
-            toolStripButtonOpen.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, Color.White);
-            toolStripButtonClear.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.layers_clear, 48, Color.White);
-            toolStripButtonCrop.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.crop, 48, Color.White);
-            toolStripButtonChromaKey.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.filter_frames, 48, Color.White);
-            toolStripButtonRestore.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.restore, 48, Color.White);
+            toolStripButtonFile.SetImage(MaterialDesign.Instance, Program.Icon, 48, SystemColors.Control);
 
-            toolStripButtonToB64.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.keyboard_arrow_right, 48, Color.White);
-            toolStripButtonFromB64.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.keyboard_arrow_left, 48, Color.White);
+            newToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.insert_drive_file, 48, toolStripMenu.BackColor);
+            openToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.folder_open, 48, toolStripMenu.BackColor);
+            saveToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, toolStripMenu.BackColor);
+            saveAsToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, toolStripMenu.BackColor);
 
-            toolStripButtonSave.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.save, 48, Color.White);
+            toolStripButtonClear.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.layers_clear, 48, SystemColors.Control);
+            toolStripButtonCrop.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.crop, 48, SystemColors.Control);
+            toolStripButtonChromaKey.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.filter_frames, 48, SystemColors.Control);
+            toolStripButtonRestore.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.restore, 48, SystemColors.Control);
 
-            toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, Color.White);
-            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, Color.White);
+            toolStripButtonToB64.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.keyboard_arrow_right, 48, SystemColors.Control);
+            toolStripButtonFromB64.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.keyboard_arrow_left, 48, SystemColors.Control);
 
-            copyToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.content_copy, 16, toolStripMenu.BackColor);
-            pasteToolStripMenuItem.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.content_paste, 16, toolStripMenu.BackColor);
+            toolStripButtonUpdates.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.system_update_alt, 48, SystemColors.Control);
+
+            toolStripButtonAbout.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.info, 48, SystemColors.Control);
+            toolStripButtonClose.SetImage(MaterialDesign.Instance, MaterialDesign.IconType.close, 48, SystemColors.Control);
 
 #if DEBUG
             FormHelper.ExtractResources(toolStripMenu);
@@ -76,7 +83,7 @@ namespace Toolkit.Forms
             //toolStripButtonFromB64.Enabled = Image != null;
             toolStripButtonCrop.Enabled = Image != null;
             toolStripButtonChromaKey.Enabled = Image != null;
-            toolStripButtonSave.Enabled = Image != null;
+            saveAsToolStripMenuItem.Enabled = Image != null;
             toolStripButtonRestore.Enabled = Image != null;
 
             bufferedPanelPreview.BackgroundImage = Image;
@@ -111,7 +118,7 @@ namespace Toolkit.Forms
                 {
                     filename = ((string[])data)[0];
                     var ext = Path.GetExtension(filename).ToLower();
-                    ret = (Program.imageFiles.Contains(ext) || Program.textFiles.Contains(ext));
+                    ret = (Program.Formats.Contains(ext) || Program.Texts.Contains(ext));
                 }
             }
             return ret;
@@ -173,7 +180,7 @@ namespace Toolkit.Forms
         private void LoadFile(object item)
         {
             var fi = new FileInfo(item.ToString());
-            if (Program.textFiles.Contains(fi.Extension))
+            if (Program.Texts.Contains(fi.Extension))
             {
                 try
                 {
@@ -315,9 +322,32 @@ namespace Toolkit.Forms
 
         #endregion ToolStrip
 
-        private async void FormMain_Load(object sender, System.EventArgs e)
+        private async void FormMain_Load(object sender, EventArgs e)
         {
-            await GitHubInfo.CheckForUpdateAsync();
+            toolStripButtonUpdates.Checked = Properties.Settings.Default.CheckForUpdates;
+
+            if (Properties.Settings.Default.CheckForUpdates)
+                await GitHubInfo.CheckForUpdateAsync();
+        }
+
+        private void ToolStripButtonUpdates_Click(object sender, EventArgs e)
+        {
+            var checkForUpdates = !toolStripButtonUpdates.Checked;
+            toolStripButtonUpdates.Checked = checkForUpdates;
+            Properties.Settings.Default.CheckForUpdates = checkForUpdates;
+            Properties.Settings.Default.Save();
+        }
+
+        private void ToolStripButtonNew_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ToolStripButtonPrint_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ToolStripButtonExport_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -30,52 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChroma));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonColor = new System.Windows.Forms.Button();
-            this.buttonApply = new System.Windows.Forms.Button();
-            this.buttonOk = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelKey = new System.Windows.Forms.Label();
             this.buttonKey = new System.Windows.Forms.Button();
             this.labelPercentage = new System.Windows.Forms.Label();
-            this.labelColor = new System.Windows.Forms.Label();
             this.numericUpDownPercentage = new System.Windows.Forms.NumericUpDown();
+            this.labelColor = new System.Windows.Forms.Label();
+            this.buttonColor = new System.Windows.Forms.Button();
+            this.buttonApply = new System.Windows.Forms.Button();
+            this.buttonOk = new System.Windows.Forms.Button();
             this.colorDialogKey = new System.Windows.Forms.ColorDialog();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.buttonApply);
             this.panel1.Controls.Add(this.buttonOk);
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Name = "panel1";
             // 
-            // buttonColor
+            // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.buttonColor, "buttonColor");
-            this.buttonColor.Name = "buttonColor";
-            this.buttonColor.UseVisualStyleBackColor = true;
-            this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
-            // 
-            // buttonApply
-            // 
-            resources.ApplyResources(this.buttonApply, "buttonApply");
-            this.buttonApply.Name = "buttonApply";
-            this.buttonApply.UseVisualStyleBackColor = true;
-            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
-            // 
-            // buttonOk
-            // 
-            resources.ApplyResources(this.buttonOk, "buttonOk");
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            this.flowLayoutPanel1.Controls.Add(this.labelKey);
+            this.flowLayoutPanel1.Controls.Add(this.buttonKey);
+            this.flowLayoutPanel1.Controls.Add(this.labelPercentage);
+            this.flowLayoutPanel1.Controls.Add(this.numericUpDownPercentage);
+            this.flowLayoutPanel1.Controls.Add(this.labelColor);
+            this.flowLayoutPanel1.Controls.Add(this.buttonColor);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // labelKey
             // 
@@ -87,22 +78,45 @@
             resources.ApplyResources(this.buttonKey, "buttonKey");
             this.buttonKey.Name = "buttonKey";
             this.buttonKey.UseVisualStyleBackColor = true;
-            this.buttonKey.Click += new System.EventHandler(this.buttonKey_Click);
+            this.buttonKey.Click += new System.EventHandler(this.ButtonKey_Click);
             // 
             // labelPercentage
             // 
             resources.ApplyResources(this.labelPercentage, "labelPercentage");
             this.labelPercentage.Name = "labelPercentage";
             // 
+            // numericUpDownPercentage
+            // 
+            resources.ApplyResources(this.numericUpDownPercentage, "numericUpDownPercentage");
+            this.numericUpDownPercentage.Name = "numericUpDownPercentage";
+            // 
             // labelColor
             // 
             resources.ApplyResources(this.labelColor, "labelColor");
             this.labelColor.Name = "labelColor";
             // 
-            // numericUpDownPercentage
+            // buttonColor
             // 
-            resources.ApplyResources(this.numericUpDownPercentage, "numericUpDownPercentage");
-            this.numericUpDownPercentage.Name = "numericUpDownPercentage";
+            resources.ApplyResources(this.buttonColor, "buttonColor");
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.UseVisualStyleBackColor = true;
+            this.buttonColor.Click += new System.EventHandler(this.ButtonColor_Click);
+            // 
+            // buttonApply
+            // 
+            resources.ApplyResources(this.buttonApply, "buttonApply");
+            this.buttonApply.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.UseVisualStyleBackColor = true;
+            this.buttonApply.Click += new System.EventHandler(this.ButtonApply_Click);
+            // 
+            // buttonOk
+            // 
+            resources.ApplyResources(this.buttonOk, "buttonOk");
+            this.buttonOk.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.ButtonOk_Click);
             // 
             // colorDialogKey
             // 
@@ -116,17 +130,6 @@
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.TabStop = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.labelKey);
-            this.flowLayoutPanel1.Controls.Add(this.buttonKey);
-            this.flowLayoutPanel1.Controls.Add(this.labelPercentage);
-            this.flowLayoutPanel1.Controls.Add(this.numericUpDownPercentage);
-            this.flowLayoutPanel1.Controls.Add(this.labelColor);
-            this.flowLayoutPanel1.Controls.Add(this.buttonColor);
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
             // FormChroma
             // 
             this.AcceptButton = this.buttonOk;
@@ -137,9 +140,9 @@
             this.DoubleBuffered = true;
             this.Name = "FormChroma";
             this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPercentage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
