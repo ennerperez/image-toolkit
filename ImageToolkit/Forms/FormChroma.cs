@@ -12,7 +12,6 @@ namespace Toolkit.Forms
             InitializeComponent();
 
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
-
         }
 
         private Image _Image;
@@ -37,9 +36,9 @@ namespace Toolkit.Forms
             if (ImageChanged != null)
                 ImageChanged(this, e);
 
-            pictureBoxImage.Image  = new Bitmap(Image);
+            pictureBoxImage.Image = new Bitmap(Image);
         }
- 
+
         private void buttonOk_Click(object sender, EventArgs e)
         {
             Image = pictureBoxImage.Image;
@@ -63,7 +62,7 @@ namespace Toolkit.Forms
             var image = new MagickImage(new Bitmap(this.Image));
             image.ColorFuzz = new Percentage((Double)numericUpDownPercentage.Value);
             image.TransparentChroma(new MagickColor(buttonKey.BackColor), new MagickColor(buttonColor.BackColor));
-            pictureBoxImage.Image = image.ToBitmap( System.Drawing.Imaging.ImageFormat.Png);
+            pictureBoxImage.Image = image.ToBitmap(System.Drawing.Imaging.ImageFormat.Png);
         }
     }
 }

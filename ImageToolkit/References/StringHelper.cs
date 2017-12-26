@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 #if !PORTABLE
+
 using System.Security.Cryptography;
+
 #endif
+
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -13,9 +16,9 @@ namespace Platform.Support
     namespace Core
     {
 #endif
+
     public static class StringHelper
     {
-
         public static bool IsNumeric(string expression)
         {
             bool hasDecimal = false;
@@ -28,7 +31,7 @@ namespace Platform.Support
                         return false;
                     else // 1st decimal
                     {
-                        // inform loop decimal found and continue 
+                        // inform loop decimal found and continue
                         hasDecimal = true;
                         continue;
                     }
@@ -63,6 +66,7 @@ namespace Platform.Support
         }
 
 #if !PORTABLE
+
         public static string SHA256(string str, string key = null)
         {
             string result;
@@ -81,6 +85,7 @@ namespace Platform.Support
 
             return result;
         }
+
         public static string MD5(string str, string key = null)
         {
             string result;
@@ -99,9 +104,10 @@ namespace Platform.Support
 
             return result;
         }
-#endif
 
-        }
+#endif
+    }
+
 #if PORTABLE
     }
 #endif

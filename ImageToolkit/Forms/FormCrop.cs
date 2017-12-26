@@ -11,7 +11,6 @@ namespace Toolkit.Forms
             InitializeComponent();
 
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
-
         }
 
         private Image _Image;
@@ -36,14 +35,12 @@ namespace Toolkit.Forms
             if (ImageChanged != null)
                 ImageChanged(this, e);
 
-
             numericUpDownX.Maximum = (decimal)(Image.PhysicalDimension.Width + 1);
             numericUpDownY.Maximum = (decimal)(Image.PhysicalDimension.Height + 1);
             numericUpDownWidth.Maximum = (decimal)(Image.PhysicalDimension.Width + 1);
             numericUpDownHeight.Maximum = (decimal)(Image.PhysicalDimension.Height + 1);
 
             imageCropControl.Bitmap = new Bitmap(Image);
-
         }
 
         private void imageCropControl_CropRectangleChanged(object sender, EventArgs e)
@@ -59,10 +56,8 @@ namespace Toolkit.Forms
 
         private void numericUpDown_ValueChanged(object sender, EventArgs e)
         {
-
             imageCropControl.CropRectangleChanged -= imageCropControl_CropRectangleChanged;
             imageCropControl.CropRectangleChanged += imageCropControl_CropRectangleChanged;
-
         }
 
         private void buttonCrop_Click(object sender, EventArgs e)

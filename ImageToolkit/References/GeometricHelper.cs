@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 
 namespace Platform.Support.Drawing
 {
     public static partial class GeometricHelper
     {
-
         public static bool IsPointInRectangle(Point p, Rectangle r)
         {
             bool flag = false;
@@ -33,7 +28,5 @@ namespace Platform.Support.Drawing
                 g.DrawArc(p1, r1, 135, 180);
             }
         }
-
-
     }
 }

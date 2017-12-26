@@ -11,7 +11,6 @@ namespace Toolkit.Forms
 {
     public partial class FormB64Editor : Form
     {
-
         public enum Mode
         {
             Open,
@@ -21,7 +20,7 @@ namespace Toolkit.Forms
         private string base64;
 
         public Image Image { get; set; }
-                public Mode OpenMode { get; set; }
+        public Mode OpenMode { get; set; }
 
         public FormB64Editor(Mode mode = Mode.Save)
         {
@@ -38,10 +37,12 @@ namespace Toolkit.Forms
                 case Mode.Open:
                     buttonAction.Text = "&Process"; //TODO: Translate
                     break;
+
                 case Mode.Save:
                     buttonAction.Text = "&Save..."; //TODO: Translate
 
                     break;
+
                 default:
                     break;
             }
@@ -68,9 +69,11 @@ namespace Toolkit.Forms
                     }
 
                     break;
+
                 case Mode.Save:
                     saveFileDialogB64.ShowDialog();
                     break;
+
                 default:
                     break;
             }
@@ -92,7 +95,6 @@ namespace Toolkit.Forms
 
         private void FormB64Editor_Load(object sender, EventArgs e)
         {
-
             numericUpDownColumns.Visible = OpenMode != Mode.Open;
             labelColumns.Visible = numericUpDownColumns.Visible;
 
@@ -124,7 +126,6 @@ namespace Toolkit.Forms
             }
             else
                 textBoxB64.Text = base64;
-
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -133,6 +134,5 @@ namespace Toolkit.Forms
         }
 
         public event EventHandler Process;
-
     }
 }
