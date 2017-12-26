@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
+
 #if PORTABLE
 using Helpers = Platform.Support.Core.StringHelper;
 #else
+
 using Helpers = Platform.Support.StringHelper;
+
 #endif
 
 namespace Platform.Support
@@ -15,9 +17,9 @@ namespace Platform.Support
     namespace Core
     {
 #endif
+
     public static class StringExtensions
     {
-
         public static bool IsNumeric(this string expression)
         {
             return Helpers.IsNumeric(expression);
@@ -74,14 +76,15 @@ namespace Platform.Support
         {
             return Helpers.SHA256(source, key);
         }
+
         public static string MD5(this string source, string key = null)
         {
             return Helpers.MD5(source, key);
         }
 
 #endif
-
     }
+
 #if PORTABLE
     }
 #endif

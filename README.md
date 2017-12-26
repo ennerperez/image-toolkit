@@ -1,8 +1,8 @@
 ![logo](.editoricon.png)
 
-# Image Toolkit for Devigners
+# Image Toolkit
 
-Image Toolkit is an powerful to for all developers who need sometimes some kind of designer winds like serialize images...
+Image serializer/deserializer, cropper, fast and simple manipulation.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/p0yjbh6turs9ws8b?svg=true)](https://ci.appveyor.com/project/ennerperez/image-toolkit)
 

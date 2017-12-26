@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Pictograms;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.Pictograms;
@@ -12,8 +13,8 @@ namespace Toolkit.Forms
 {
     public partial class FormMain : Form
     {
-
         private Image image;
+
         public Image Image
         {
             get
@@ -60,7 +61,6 @@ namespace Toolkit.Forms
 #if DEBUG
             FormHelper.ExtractResources(toolStripMenu);
 #endif
-
         }
 
         #region Events
@@ -69,8 +69,7 @@ namespace Toolkit.Forms
 
         private void OnImageChanged(EventArgs e)
         {
-            if (ImageChanged != null)
-                ImageChanged(this, e);
+            ImageChanged?.Invoke(this, e);
 
             labelPreview.Visible = Image == null;
             toolStripButtonToB64.Enabled = Image != null;
@@ -84,12 +83,12 @@ namespace Toolkit.Forms
             //trackBarCompressRatio.Enabled = Image != null;
 
             toolStripButtonClear.Enabled = Image != null;
-
         }
 
-        #endregion
+        #endregion Events
 
         public delegate void AssignImageDelegate();
+
         protected void AssignImage()
         {
             Image = nextImage;
@@ -101,15 +100,14 @@ namespace Toolkit.Forms
         private Thread getFileThread;
         private Bitmap nextImage;
 
-        private bool getFileName(out string filename, DragEventArgs e)
+        private bool GetFileName(out string filename, DragEventArgs e)
         {
             var ret = false;
             filename = string.Empty;
 
             if ((e.AllowedEffect & DragDropEffects.Copy) == DragDropEffects.Copy)
             {
-                var data = ((IDataObject)e.Data).GetData("FileName") as Array;
-                if (data != null && ((data.Length == 1) && (data.GetValue(0) is string)))
+                if (((IDataObject)e.Data).GetData("FileName") is Array data && ((data.Length == 1) && (data.GetValue(0) is string)))
                 {
                     filename = ((string[])data)[0];
                     var ext = Path.GetExtension(filename).ToLower();
@@ -119,7 +117,7 @@ namespace Toolkit.Forms
             return ret;
         }
 
-        private void dragDrop(object sender, DragEventArgs e)
+        private void FormMain_DragDrop(object sender, DragEventArgs e)
         {
             if (validData)
             {
@@ -132,14 +130,14 @@ namespace Toolkit.Forms
             }
         }
 
-        private void dragEnter(object sender, DragEventArgs e)
+        private void FormMain_DragEnter(object sender, DragEventArgs e)
         {
             var fileName = string.Empty;
-            validData = getFileName(out fileName, e);
+            validData = GetFileName(out fileName, e);
             if (validData && !string.IsNullOrEmpty(fileName))
             {
                 bufferedPanelPreview.BackgroundImage = null;
-                getFileThread = new Thread(new ParameterizedThreadStart(loadFile));
+                getFileThread = new Thread(new ParameterizedThreadStart(LoadFile));
                 getFileThread.Start(fileName);
 
                 e.Effect = DragDropEffects.Copy;
@@ -148,33 +146,32 @@ namespace Toolkit.Forms
                 e.Effect = DragDropEffects.None;
         }
 
-        #endregion
-        
+        #endregion Drag & Drop
+
         #region Clipboard
 
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Clipboard.ContainsImage())
                 Image = Clipboard.GetImage() as Bitmap;
         }
 
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (bufferedPanelPreview.BackgroundImage != null)
                 Clipboard.SetImage(bufferedPanelPreview.BackgroundImage);
         }
 
-        private void contextMenuStripImage_Opening(object sender, CancelEventArgs e)
+        private void ContextMenuStripImage_Opening(object sender, CancelEventArgs e)
         {
             pasteToolStripMenuItem.Enabled = Clipboard.ContainsImage();
             copyToolStripMenuItem.Enabled = bufferedPanelPreview.BackgroundImage != null;
         }
 
-        #endregion
+        #endregion Clipboard
 
-        private void loadFile(object item)
+        private void LoadFile(object item)
         {
-
             var fi = new FileInfo(item.ToString());
             if (Program.textFiles.Contains(fi.Extension))
             {
@@ -189,16 +186,15 @@ namespace Toolkit.Forms
                     Debug.WriteLine(ex.Message);
                     MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
                 nextImage = new Bitmap(item.ToString());
                 this.Invoke(new AssignImageDelegate(AssignImage));
             }
-
         }
-        private void displayChild(Form child, int factor = 0)
+
+        private void DisplayChild(Form child, int factor = 0)
         {
             if (factor > 0)
             {
@@ -213,20 +209,20 @@ namespace Toolkit.Forms
             child.Show();
         }
 
-        private void openFileDialogMain_FileOk(object sender, CancelEventArgs e)
+        private void OpenFileDialogMain_FileOk(object sender, CancelEventArgs e)
         {
             try
             {
-                loadFile(openFileDialogMain.FileName);
+                LoadFile(openFileDialogMain.FileName);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
                 MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                
         }
-        private void saveFileDialogMain_FileOk(object sender, CancelEventArgs e)
+
+        private void SaveFileDialogMain_FileOk(object sender, CancelEventArgs e)
         {
             try
             {
@@ -242,11 +238,12 @@ namespace Toolkit.Forms
 
         #region ToolStrip
 
-        private void toolStripButtonOpen_Click(object sender, EventArgs e)
+        private void ToolStripButtonOpen_Click(object sender, EventArgs e)
         {
             openFileDialogMain.ShowDialog();
         }
-        private void toolStripButtonClear_Click(object sender, EventArgs e)
+
+        private void ToolStripButtonClear_Click(object sender, EventArgs e)
         {
             Image = null;
             nextImage = null;
@@ -254,59 +251,73 @@ namespace Toolkit.Forms
                 getFileThread.Abort();
         }
 
-        private void toolStripButtonChromaKey_Click(object sender, EventArgs e)
+        private void ToolStripButtonChromaKey_Click(object sender, EventArgs e)
         {
-            var child = new FormChroma();
-            child.Image = bufferedPanelPreview.BackgroundImage;
+            var child = new FormChroma
+            {
+                Image = bufferedPanelPreview.BackgroundImage
+            };
             if (child.ShowDialog() == DialogResult.OK)
                 bufferedPanelPreview.BackgroundImage = child.Image;
         }
-        private void toolStripButtonCrop_Click(object sender, EventArgs e)
+
+        private void ToolStripButtonCrop_Click(object sender, EventArgs e)
         {
-            var child = new FormCrop();
-            child.Image = bufferedPanelPreview.BackgroundImage;
+            var child = new FormCrop
+            {
+                Image = bufferedPanelPreview.BackgroundImage
+            };
             if (child.ShowDialog() == DialogResult.OK)
                 bufferedPanelPreview.BackgroundImage = child.Image;
         }
-        private void toolStripButtonRestore_Click(object sender, EventArgs e)
+
+        private void ToolStripButtonRestore_Click(object sender, EventArgs e)
         {
             if (Image != null)
                 bufferedPanelPreview.BackgroundImage = Image;
         }
 
-        private void toolStripButtonFromB64_Click(object sender, EventArgs e)
+        private void ToolStripButtonFromB64_Click(object sender, EventArgs e)
         {
             var editor = new FormB64Editor(FormB64Editor.Mode.Open);
             editor.Process += (object s, EventArgs v) => bufferedPanelPreview.BackgroundImage = editor.Image;
-            displayChild(editor, 1);
+            DisplayChild(editor, 1);
         }
-        private void toolStripButtonToB64_Click(object sender, EventArgs e)
+
+        private void ToolStripButtonToB64_Click(object sender, EventArgs e)
         {
             if (bufferedPanelPreview.BackgroundImage != null)
             {
-                var editor = new FormB64Editor(FormB64Editor.Mode.Save);
-                editor.Image = bufferedPanelPreview.BackgroundImage;
-                displayChild(editor, 1);
+                var editor = new FormB64Editor(FormB64Editor.Mode.Save)
+                {
+                    Image = bufferedPanelPreview.BackgroundImage
+                };
+                DisplayChild(editor, 1);
             }
         }
 
-        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        private void ToolStripButtonSave_Click(object sender, EventArgs e)
         {
             if (bufferedPanelPreview.BackgroundImage != null)
                 saveFileDialogMain.ShowDialog();
         }
 
-        private void toolStripButtonAbout_Click(object sender, EventArgs e)
+        private void ToolStripButtonAbout_Click(object sender, EventArgs e)
         {
             var child = new FormAbout();
             child.ShowDialog();
         }
-        private void toolStripButtonClose_Click(object sender, EventArgs e)
+
+        private void ToolStripButtonClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        #endregion
+        #endregion ToolStrip
 
+        private async void FormMain_Load(object sender, System.EventArgs e)
+        {
+            await GitHubInfo.CheckForUpdateAsync();
+        }
     }
 }

@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.6]
+### Changed
+- Missing translations
+- Moved to .NET 4.6.2
+
+### Added
+- Automatic update checker
+
 ## [1.0.5]
 ### Changed
 - Minors bugs fixes
