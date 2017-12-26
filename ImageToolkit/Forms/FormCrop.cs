@@ -10,7 +10,7 @@ namespace Toolkit.Forms
         {
             InitializeComponent();
 
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Program.Assembly.Location);
         }
 
         private Image _Image;
@@ -32,8 +32,7 @@ namespace Toolkit.Forms
 
         private void OnImageChanged(EventArgs e)
         {
-            if (ImageChanged != null)
-                ImageChanged(this, e);
+            ImageChanged?.Invoke(this, e);
 
             numericUpDownX.Maximum = (decimal)(Image.PhysicalDimension.Width + 1);
             numericUpDownY.Maximum = (decimal)(Image.PhysicalDimension.Height + 1);
@@ -43,7 +42,7 @@ namespace Toolkit.Forms
             imageCropControl.Bitmap = new Bitmap(Image);
         }
 
-        private void imageCropControl_CropRectangleChanged(object sender, EventArgs e)
+        private void ImageCropControl_CropRectangleChanged(object sender, EventArgs e)
         {
             if (Image != null)
             {
@@ -54,19 +53,19 @@ namespace Toolkit.Forms
             }
         }
 
-        private void numericUpDown_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            imageCropControl.CropRectangleChanged -= imageCropControl_CropRectangleChanged;
-            imageCropControl.CropRectangleChanged += imageCropControl_CropRectangleChanged;
+            imageCropControl.CropRectangleChanged -= ImageCropControl_CropRectangleChanged;
+            imageCropControl.CropRectangleChanged += ImageCropControl_CropRectangleChanged;
         }
 
-        private void buttonCrop_Click(object sender, EventArgs e)
+        private void ButtonCrop_Click(object sender, EventArgs e)
         {
             buttonOk.Enabled = true;
             imageCropControl.Crop();
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void ButtonOk_Click(object sender, EventArgs e)
         {
             Image = imageCropControl.Bitmap;
             DialogResult = DialogResult.OK;
